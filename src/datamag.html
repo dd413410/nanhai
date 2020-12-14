@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>观测数据管理</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/datamag.css">
+	</head>
+	<body>
+		<div class="layui-form title">
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">范围</label>
+					<div class="layui-input-block title-ipt-box">
+						<input type="text" name="latlog" lay-verify="latlog" placeholder="顺序:最大经度、最小经度、最大纬度、最小纬度;以,分割" autocomplete="off"
+						 class="layui-input">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label">船舶</label>
+					<div class="layui-input-block xm-select">
+						<div id="xmselect"></div>
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label">时间</label>
+					<div class="layui-input-block title-time-box">
+						<input type="text" name="time" id="time" placeholder="请选择时间" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<button class="layui-btn subbtn" lay-submit lay-filter="queryBtn">查询</button>
+					<button class="layui-btn addbtn" lay-submit lay-filter="export1" name="isBtn">导出1</button>
+					<button class="layui-btn addbtn" lay-submit lay-filter="export2" name="isBtn">导出2</button>
+					<!-- <button class="layui-btn subbtn export" is="1">导出1</button>
+					<button class="layui-btn subbtn export" is="2">导出2</button> -->
+				</div>
+			</div>
+		</div>
+
+		<table class="layui-hide" id="table" lay-filter="table"></table>
+		
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script src="../assets/lib/xmselect.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				getFn: "lib/getFn",
+				thead: "modul/thead",
+				datamag: "js/datamag",
+			})
+			.use("datamag");
+	</script>
+</html>

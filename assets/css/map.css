@@ -1,0 +1,99 @@
+#map {
+	width: 100vw;
+	height: 100vh;
+	z-index: 2;
+}
+
+/* 更改天地图css */
+.tdt-label{
+  background-color: rgba(0,0,0,0) !important;
+  color: #fff !important;
+  border:none !important;
+  box-shadow: 0px 0px 0px #000 !important;
+  -webkit-box-shadow:none 0px 0px 0px #000 !important;
+}
+.addText{
+  color:yellow;
+  font-weight: 700;
+  background-color:rgba(0,0,0,0.5);
+  padding:0 10px;
+  border-radius: 3px;
+}
+.tdt-infowindow-content{
+	margin: 8px !important;
+}
+.lnglat{
+	color: #fff;
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	z-index: 3;
+}
+.lnglat span{
+	padding: 0 5px;
+	text-align: center;
+}
+/* 天地图 */
+.tdt-left {
+	display: none;
+}
+
+/* 地图样式去除 */
+/* 百度地图 */
+.anchorBL {
+	display: none;
+}
+
+/* 高德地图 */
+.amap-logo {
+	display: none !important;
+}
+
+.amap-copyright {
+	visibility: hidden !important;
+}
+
+/* 修改百度地图css */
+
+/* .BMap_bubble_top,.BMap_bubble_bottom{
+	display: none !important;
+}
+.BMap_bubble_center,.BMap_bubble_content{
+	width: auto !important;
+	height: 30px !important;
+	line-height: 30px !important;
+} */
+
+
+/* 修改layui,弹窗层css */
+body .drop-demo{
+	box-sizing: border-box;
+}
+body .drop-demo .layui-layer-title {
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	font-size: 20px;
+	background: #3385FF;
+	border: none;
+}
+
+body .drop-demo .layui-layer-setwin {
+	top: 11px;
+	right: 11px;
+}
+
+body .drop-demo .layui-layer-ico {
+	width: 20px;
+	height: 20px;
+	background: url(../../static/map15.png) no-repeat;
+}
+.drop-demo .layui-tab-title li {
+	width: 80px;
+}
+
+
+
+
+

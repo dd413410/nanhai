@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title>观测数据管理-导出1</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/export.css">
+	</head>
+	<body>
+		<div class="layui-form reg-form">
+			<div class="layui-form-item">
+				<label class="layui-form-label">船舶</label>
+				<div class="layui-input-block">
+					<div id="xmselect"></div>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">时间</label>
+				<div class="layui-input-block">
+					<input type="text" id="time" name="time" lay-verify="time" placeholder="请选择时间" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">要素</label>
+				<div class="layui-input-block">
+					<input type="checkbox" lay-skin="primary" title="全选" class="checkall" lay-filter="c_all">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<div class="layui-input-block check">
+					<div class="check-box" id="check">
+						<!-- <p>
+							<input type="checkbox" lay-skin="primary" value="1" title="全选" class="checkbox">
+						</p> -->
+					</div>
+				</div>
+			</div>
+
+			<div class="layui-form-item subBtn">
+				<button class="layui-btn" lay-submit lay-filter="subbtn">导出</button>
+			</div>
+			
+		</div>
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script src="../assets/lib/xmselect.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				export: "js/export",
+			})
+			.use("export");
+	</script>
+
+</html>

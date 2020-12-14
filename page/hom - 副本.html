@@ -1,0 +1,278 @@
+<script>
+	var token = sessionStorage.token;
+	if (!token) {
+		alert("请先登录!")
+		window.top.location.href = "../index.html";
+	}
+</script>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title>远洋商船搭载调查信息数据综合监控系统</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/hom.css">
+	</head>
+	<body>
+		<div class="map-head">
+			远洋商船搭载调查信息数据综合监控系统
+		</div>
+
+		<div class="head-btn">
+			<div>
+				<p onclick="locaFn('12')">运行监控</p>
+				<p onclick="locaFn('11')">显示系统</p>
+				<p onclick="locaFn('2')">后台</p>
+			</div>
+			<div class="rt-out" onclick="outFn()">
+				<!-- 退出 -->
+			</div>
+		</div>
+
+		<div class="map-box">
+			<!-- 左侧 -->
+			<div class="side-box">
+				<div class="sub-head">
+					数据接收总数统计
+				</div>
+				<div class="side-top">
+					<div class="lt-img lt-img1">
+						<img src="../static/jk5.png">
+					</div>
+
+					<div class="img-deta1">
+						<p class="deta-top">
+							<span id="all">2,3123</span>
+							<span class="deta-comp">组</span>
+						</p>
+						<p class="deta-comp deta-desc">
+							已接收全部数据的数量
+						</p>
+					</div>
+
+					<div class="lt-img lt-img2">
+						<img src="../static/jk6.png">
+					</div>
+
+					<div class="img-deta2">
+						<p class="deta-top">
+							<span id="obtain">2,3123</span>
+							<span class="deta-comp">组</span>
+						</p>
+						<p class="deta-comp deta-desc">
+							网上抓取的船舶观测数据
+						</p>
+					</div>
+
+
+					<div class="lt-img lt-img3">
+						<img src="../static/jk7.png">
+					</div>
+
+					<div class="img-deta3">
+						<p class="deta-top">
+							<span id="grab">2,3123</span>
+							<span class="deta-comp">组</span>
+						</p>
+						<p class="deta-comp deta-desc">
+							自建系统观测已获取数据
+						</p>
+					</div>
+
+				</div>
+
+				<div class="sub-head">
+					近10天已接收数据
+				</div>
+
+				<div class="main" id="main">
+
+				</div>
+			</div>
+			<!-- 地图 -->
+			<div class="center-box">
+				<div class="center-map" id="map"></div>
+				<div class="center-list">
+					<div class="sub-head">
+						船舶数据接收
+					</div>
+					<div class="center-tle">
+						<p>船名</p>
+						<p>呼号</p>
+						<p>时间</p>
+						<p>经纬度</p>
+						<p>气温</p>
+						<p>湿度</p>
+						<p>气压</p>
+						<p>能见度</p>
+						<p>水温</p>
+						<p>皮温</p>
+						<p>盐度</p>
+					</div>
+
+					<div class="lt-call" id="ltCall">
+						<!-- <li class="center-item">
+							<p>接受数据接受数据接受数据接受数据接受数据接受数据接受数据</p>
+							<p>时间</p>
+							<p>经纬度</p>
+							<p>接受数据</p>
+						</li> -->
+						<!-- <div class="center-item">
+							<p>船名</p>
+							<p>时间</p>
+							<p>经纬度</p>
+							<p>接受数据</p>
+						</div>
+						<div class="center-item">
+							<p>船名</p>
+							<p>时间</p>
+							<p>经纬度</p>
+							<p>接受数据接受数据接受数据接受数据接受数据接受数据接受数据</p>
+						</div> -->
+					</div>
+
+
+				</div>
+			</div>
+			<!-- 右侧 -->
+			<div class="side-box">
+				<div class="sub-head">
+					运行率统计
+				</div>
+				<div class="side-top" id="pie"></div>
+
+				<div class="sub-head">
+					船舶数量
+				</div>
+
+				<div class="main" id="bar"></div>
+			</div>
+		</div>
+
+
+		<!-- 弹窗 -->
+		<div class="c-push" id="cPush">
+			<div class="c-top-deta">
+				<form class="layui-form" lay-filter="shipForm">
+					<div class="layui-form-item">
+						<label class="layui-form-label">船舶名称:</label>
+						<div class="layui-input-block">
+							<input type="text" name="boatName" disabled class="layui-input">
+						</div>
+					</div>
+					
+					<div class="layui-form-item">
+						<label class="layui-form-label">船舶呼号:</label>
+						<div class="layui-input-block">
+							<input type="text" name="boatId" disabled class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">所属单位:</label>
+						<div class="layui-input-block">
+							<input type="text" name="ofUnit" disabled class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">船舶航向:</label>
+						<div class="layui-input-block">
+							<input type="text" name="navWay" disabled class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">船舶航速:</label>
+						<div class="layui-input-block">
+							<input type="text" name="navSpeed" disabled class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">经纬度:</label>
+						<div class="layui-input-block">
+							<input type="text" name="loglat" disabled class="layui-input">
+						</div>
+					</div>
+					
+					<div class="layui-form-item">
+						<label class="layui-form-label">数据获取状态</label>
+						<div class="layui-input-block">
+							<input type="text" name="boatState" id="boatState" disabled class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">数据更新时间</label>
+						<div class="layui-input-block">
+							<input type="text" name="boatTime" disabled class="layui-input">
+						</div>
+					</div>
+					
+					<div id="btnForm">
+						<div class="layui-form-item">
+							<label class="layui-form-label">船舶名称</label>
+							<div class="layui-input-block c-img">
+								<img src="../static/zyc14.png" id="shipBtn">
+								<input type="checkbox" lay-skin="primary" title="全选" class="c-check" id="cCheck" lay-filter="c_all">
+							</div>
+						</div>
+						<div class="layui-form-item c-item">
+							<label class="layui-form-label">问题备注</label>
+							<div class="layui-input-block c-block">
+								<textarea name="content" placeholder="请输入内容" class="layui-textarea"></textarea>
+							</div>
+						</div>
+
+						<div class="layui-form-item c-item c-ass">
+							<label class="layui-form-label">指派</label>
+							<div class="layui-input-block">
+								<select name="receivePeople" lay-search id="userList">
+									<!-- <option value="">直接选择或搜索选择</option> -->
+								</select>
+							</div>
+						</div>
+
+						<div class="layui-form-item c-btn-box">
+							<button type="submit" class="layui-btn subbtn" lay-submit lay-filter="subbtn">推送</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- 选择船舶 -->
+		<div class="ship-box" id="shipBox">
+			<div class="layui-form">
+				<div class="layui-form-item">
+					<label class="layui-form-label">船舶</label>
+					<div class="layui-input-block check">
+						<div class="check-box" id="check">
+							<!-- <p>
+								<input type="checkbox" lay-skin="primary" value="1" title="全选" class="checkbox">
+							</p> -->
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item btn">
+					<button type="submit" class="layui-btn" lay-submit lay-filter="clickBtn">确定</button>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src="https://api.map.baidu.com/api?type=webgl&v=3.0&ak=xYVgj6tbqCzrmbAGc3dwlnUOpFKdoVVs"></script>
+	<script src="../assets/lib/echarts.js"></script>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				hom: "js/hom",
+			})
+			.use("hom");
+	</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title></title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/shipTab.css">
+	</head>
+	<body>
+
+		<div class="layui-form line-sub">
+			<div class="layui-input-inline">
+				<select lay-filter="dateFilt">
+					<option value="1">今天</option>
+					<option value="2">昨天</option>
+					<option value="3">前天</option>
+					<option value="0" selected>全部</option>
+					<!-- <option value="3">风速</option> -->
+				</select>
+			</div>
+			<!-- <div class="layui-input-inline">
+				<button class="layui-btn layui-btn-sm" lay-submit lay-filter="subbtn">查询</button>
+			</div> -->
+		</div>
+
+		<table class="layui-hide" id="table" lay-filter="table"></table>
+
+	</body>
+	<script src="../assets/lib//echarts.js"></script>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				getFn: "lib/getFn",
+				thead: "modul/thead",
+				shipTab: "js/shipTab",
+			})
+			.use("shipTab");
+	</script>
+</html>

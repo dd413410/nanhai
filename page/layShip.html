@@ -1,0 +1,140 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title></title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/layShip.css">
+	</head>
+	<body>
+		<div class="ship-box" id="shipDeta">
+			<div class="layui-tab" lay-filter="tab">
+				<ul class="layui-tab-title">
+					<li class="layui-this" lay-id="getAisFn">船舶信息</li>
+					<li lay-id="getMeteFn">气象信息</li>
+				</ul>
+				<div class="layui-tab-content">
+					<div class="layui-tab-item layui-show">
+						<ul class="layui-form form-deta" lay-filter="aisForm">
+							<li>
+								<p class="name">船舶名称:</p>
+								<input type="text" name="boatName" disabled>
+							</li>
+							<li>
+								<p class="name">船舶呼号:</p>
+								<input type="text" name="boatId" disabled>
+							</li>
+							
+							<li>
+								<p class="name">所属单位:</p>
+								<input type="text" name="ofUnit" disabled>
+							</li>
+							<li>
+								<p class="name">船舶首相:</p>
+								<input type="text" name="navHead" disabled>
+							</li>
+							
+							<li>
+								<p class="name">船舶航向:</p>
+								<input type="text" name="navWay" disabled>
+							</li>
+							<li>
+								<p class="name">船舶航速:</p>
+								<input type="text" name="navSpeed" disabled>
+							</li>
+							
+							<li>
+								<p class="name">经度:</p>
+								<input type="text" name="boatLog" disabled>
+							</li>
+							<li>
+								<p class="name">纬度:</p>
+								<input type="text" name="boatLat" disabled>
+							</li>
+							
+							<li>
+								<p class="name">设备安装时间:</p>
+								<input type="text" name="fixTime" disabled>
+							</li>
+							<li>
+								<p class="name">船舶已装设备:</p>
+								<input type="text" name="instName" disabled>
+							</li>
+							
+							<li class="alone">
+								<p class="name">更新时间:</p>
+								<input type="text" name="UpdateTime" disabled>
+							</li>
+						</ul>
+					</div>
+					<div class="layui-tab-item">
+						<ul class="layui-form form-deta" id="mete">
+							<!-- <li>
+								<p class="name">风速</p>
+								<input type="text" name="abs_ws" disabled>
+							</li> -->
+						</ul>
+
+					</div>
+				</div>
+			</div>
+
+
+			<div class="lately">
+				<p onclick="witchFn('shipDeta','shipLine','1')">
+					近三天曲线
+				</p>
+				<p id="track">
+					轨迹
+				</p>
+			</div>
+		</div>
+		
+	
+		<!-- 三天折线图 -->
+		<div class="ship-box" id="shipLine">
+			<div class="line" id="line">
+				<div class="layui-form line-sub">
+					<div class="layui-input-inline">
+						<select id="el" lay-filter="elFilt">
+							<!-- <option value="3">风速</option> -->
+						</select>
+					</div>
+				</div>
+				<div class="main" id="main">
+
+				</div>
+			</div>
+			<div class="lately">
+				<p onclick="witchFn('shipLine','shipDeta','2')">
+					船舶信息
+				</p>
+				
+				<p id="dataTab">
+					数据表格
+				</p>
+			</div>
+		</div>
+		
+		
+		
+		
+	</body>
+	<script src="../assets/lib//echarts.js"></script>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				getFn: "lib/getFn",
+				layShip: "js/layShip",
+			})
+			.use("layShip");
+	</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title>志愿船信息管理-基本信息管理</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/ship.css">
+	</head>
+	<body>
+		<div class="layui-form title">
+			<div>
+				<label>志愿船名称</label>
+				<div class="title-ipt-box">
+					<input type="text" name="shipname" autocomplete="off" placeholder="请输入船舶名称或者船舶呼号" class="layui-input">
+				</div>
+			</div>
+			<div>
+				<button type="submit" class="layui-btn subbtn" lay-submit lay-filter="queryBtn">查询</button>
+				<button class="layui-btn" id="addBtn">新增</button>
+			</div>
+		</div>
+		
+		<table class="layui-hide" id="table" lay-filter="table"></table>
+		<script type="text/html" id="toolbar">
+			<a class="btn" lay-event="1">
+				<img src="../static/zyc1.png">
+				<span>编辑</span>
+			</a>
+			<a class="btn" lay-event="2">
+				 <img src="../static/zyc2.png">
+				 <span>删除</span>
+			</a>
+			<a class="btn btn-dele" lay-event="3">
+				<img src="../static/zyc3.png">
+				<span>导出</span>
+			</a>
+		</script>
+		
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				thead: "modul/thead",
+				ship: "js/ship",
+			})
+			.use("ship");
+	</script>
+
+</html>

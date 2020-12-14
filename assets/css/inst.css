@@ -1,0 +1,123 @@
+body {
+	padding: 0 40px;
+	box-sizing: border-box;
+	margin-top: 2px;
+}
+
+.title{
+	display: flex;
+	margin-bottom: 25px;
+}
+
+.title>div {
+	display: flex;
+	margin-right: 20px;
+}
+
+.title>div button {
+	height: 32px;
+	line-height: 32px;
+	margin-top: 2px;
+}
+
+.subbtn {
+	background-color: #00B0FF;
+}
+
+.addbtn {
+	background-color: #009567;
+}
+
+/* table */
+.layui-table-header,
+.layui-table thead tr {
+	background-color: transparent;
+}
+
+.layui-table th {
+	color: #929293;
+	font-size: 16px;
+}
+
+.layui-table td {
+	color: #0E0E0E;
+	font-size: 18px;
+	font-family: Source Han Sans CN;
+}
+
+
+.layui-table-cell {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.layui-table-page {
+	text-align: right;
+	padding-top: 37px;
+	height: 78px;
+}
+
+.btn{
+	display: inline-block;
+	height: 50px;
+	line-height: 20px;
+	padding: 15px 0;
+	box-sizing: border-box;
+	margin-left: 10px;
+	overflow: hidden;
+}
+.btn img{
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	vertical-align: top;
+}
+.btn span{
+	height: 20px;
+	line-height: 20px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.btn-change {
+	color: #FFB203;
+}
+.btn-res {
+	color: #018377;
+}
+.btn-dele i{
+	font-size: 20px;
+	color: red;
+}
+
+
+/* 修改弹窗样式 */
+body .drop-demo {
+	box-sizing: border-box;
+}
+
+body .drop-demo .layui-layer-title {
+	width: 100%;
+	height: 50px;
+	background: url(../../static/zyc4.png) no-repeat;
+	background-size: 100% 100%;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+body .drop-demo .layui-layer-title img {
+	width: 20px;
+	height: 20px;
+	margin-top: 15px;
+	margin-right: 10px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+body .drop-demo .layui-layer-title span {
+	display: inline-block;
+	color: #FFFFFF;
+	font-size: 20px;
+	line-height: 50px;
+}

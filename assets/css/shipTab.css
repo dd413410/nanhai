@@ -1,0 +1,40 @@
+body {
+/* 	width: 500px; */
+	width:100%;
+	height: 530px;
+	/* height: 100%; */
+}
+.line-sub{
+	margin-bottom: 2px;
+}
+.line-sub button{
+	background: #3385FF;
+}
+.layui-table, .layui-table-view{
+	margin: 0;
+}
+.layui-table-header,
+.layui-table thead tr {
+	background-color: transparent;
+}
+.layui-table th {
+	color: #929293;
+	font-size: 16px;
+}
+.layui-table td {
+	color: #0E0E0E;
+	font-size: 16px;
+	font-family: Source Han Sans CN;
+}
+
+.layui-table-cell {
+	/* height: 50px;
+	line-height: 50px; */
+	text-align: center;
+}
+
+.layui-table-page {
+	/* height: 78px; */
+	text-align: right;
+	border-top: none;
+}

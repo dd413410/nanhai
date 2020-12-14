@@ -1,0 +1,76 @@
+body {
+	padding: 10px 14px;
+	box-sizing: border-box;
+}
+
+.title {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	color: #000;
+	font-size: 20px;
+	display: flex;
+	text-align: center;
+}
+
+
+/* 820 */
+.center{
+	width: 100%;
+}
+.center .item{
+	height: 170px;
+	text-align: center;
+	margin-bottom: 5px;
+	display: flex;
+	background: #ccc;
+}
+.center .item div{
+	border: 1px solid #fff;
+	border-right: none;
+	box-sizing: border-box;
+}
+
+.center .item:nth-child(2n){
+	background: #ccc;
+} 
+
+.title P:nth-child(1),.item div:nth-child(1){
+	width: 80px;
+	
+}
+.title P:nth-child(2),.item div:nth-child(2) {
+	width:320px;
+}
+.title P:nth-child(3),.item div:nth-child(3) {
+	width:570px;
+}
+.item img{
+	width: 33px;
+	height: 30px;
+	margin-top:50px;
+}
+.item .desc{
+	font-size: 16px;
+	padding: 5px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+.item .desc p{
+	flex: 1;
+	text-align: left;
+	line-height: 52px;
+}
+
+.item .descs{
+	font-size: 12px;
+	padding: 5px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+.item .descs p{
+	flex: 1;
+	text-align: left;
+}

@@ -1,0 +1,246 @@
+<script>
+	var token = sessionStorage.token;
+	if (!token) {
+	    alert("请先登录!")
+	    window.top.location.href = "../index.html";
+	}
+</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title>船舶安装设备运行状态信息数据综合监控系统</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/homes.css">
+	</head>
+	<body>
+		<div id="map"></div>
+
+		<div class="head">
+			<!-- 船舶安装设备运行状态信息数据综合监控系统 -->
+		</div>
+
+		<div class="head-btn">
+			<div>
+				<p onclick="locaFn('13')">综合监控</p>
+				<p onclick="locaFn('11')">显示系统</p>
+				<p onclick="locaFn('2')">后台</p>
+			</div>
+			<div class="rt-out" onclick="outFn()">
+				退出
+			</div>
+		</div>
+
+		<!-- 绿色：正常
+		红色: 缺失
+		橙色: 缺失已反馈,待处理 -->
+		<div class="lt-box">
+			<div class="sub-head">
+				船舶安装设备的运行情况
+			</div>
+			<div class="lt-top">
+				<div class="box-btn">
+					<p class="add" onclick="getFn(this,'1','getType','getFun')">自己加装设备的船舶</p>
+					<p is="2" onclick="getFn(this,'2','getType','getFun')">中心抓取的船舶</p>
+				</div>
+
+				<div class="box-cir">
+					<div>
+						<p class="cir-img cir-img1" id="total"></p>
+						<p>总量</p>
+					</div>
+					<div>
+						<p class="cir-img cir-img2" id="normal"></p>
+						<p>正常</p>
+					</div>
+					<div>
+						<p class="cir-img cir-img3" id="repair"></p>
+						<p>部分数据缺失</p>
+					</div>
+					<div>
+						<p class="cir-img cir-img4" id="damage"></p>
+						<p>中断</p>
+					</div>
+				</div>
+
+				<div class="lt-prog">
+					<div class="pro-box">
+						<label>正常</label>
+						<div class="layui-progress" lay-showpercent="true">
+							<div class="layui-progress-bar pro-item1" id="proItem1" lay-percent="0%"></div>
+						</div>
+					</div>
+					
+					<div class="pro-box">
+						<label>缺失</label>
+						<div class="layui-progress" lay-showpercent="true">
+							<div class="layui-progress-bar pro-item2" id="proItem2" lay-percent="0%"></div>
+						</div>
+					</div>
+					
+					<div class="pro-box">
+						<label>中断</label>
+						<div class="layui-progress" lay-showpercent="true">
+							<div class="layui-progress-bar pro-item3" id="proItem3" lay-percent="0%"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="sub-head">
+				报警记录
+			</div>
+			<div class="box-btn">
+				<p class="add" onclick="getFn(this,'0','alarmType','getAlarmFn','ltCall')">全部</p>
+				<p onclick="getFn(this,'1','alarmType','getAlarmFn','ltCall')">中断</p>
+				<p onclick="getFn(this,'2','alarmType','getAlarmFn','ltCall')">部分缺失</p>
+			</div>
+
+			<div class="lt-call" id="ltCall">
+				<!-- <ul>
+					<li class="item">
+						<p class="desc">某某海域某型号商船船设备仪器中断某某海域某型号商船船设备仪器中断</p>
+						<p class="time">2020-09-28 09:00:00</p>
+					</li>
+				</ul> -->
+			</div>
+
+			<div class="sub-head sub-top">
+				图标介绍
+			</div>
+			<div class="lt-btm">
+				<div>
+					<img src="../static/zh3.png" alt="">
+					<span>正常</span>
+				</div>
+				<div>
+					<img src="../static/zh4.png" alt="">
+					<span>部分数据缺失</span>
+				</div>
+				<div>
+					<img src="../static/zh5.png" alt="">
+					<span>中断</span>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="rt-box">
+			<div class="sub-head">
+				船舶数据
+			</div>
+			<div class="rt-top">
+				<div class="rt-top-t" id="shipDeta">
+					<!-- <p>
+						航向
+						<span>东</span>
+					</p>
+					<p>航速</p>
+					<p>经度</p>
+					<p>纬度</p> -->
+				</div>
+				<div class="rt-top-b" id="elDeta">
+					<div>
+						<img src="../static/s1.png">
+						<p>
+							航向
+							<span>
+								东
+							</span>
+						</p>
+					</div>
+					<!-- <div>
+						<img src="../static/s1.png" alt="">
+						<span>航向</span>
+					</div>
+					<div>
+						<img src="../static/s1.png" alt="">
+						<span>航向</span>
+					</div>
+					<div>
+						<img src="../static/s2.png" alt="">
+						<span>航向</span>
+					</div>
+					<div>
+						<img src="../static/s2.png" alt="">
+						<span>航向</span>
+					</div>
+					<div>
+						<img src="../static/s3.png" alt="">
+						<span>航向</span>
+					</div>
+					<div>
+						<img src="../static/s1.png" alt="">
+						<span>航向</span>
+					</div>
+					<div>
+						<img src="../static/s1.png" alt="">
+						<span>航向</span>
+					</div>
+					<div>
+						<img src="../static/s1.png" alt="">
+						<span>航向</span>
+					</div> -->
+
+				</div>
+			</div>
+
+			<div class="sub-head">
+				维修记录
+			</div>
+
+			<div class="box-btn">
+				<p class="add" onclick="getFn(this,'1','repType','getRepFn','rtCall')">中心加装设备船舶</p>
+				<p onclick="getFn(this,'2','repType','getRepFn','rtCall')">中心抓取数据船舶</p>
+			</div>
+
+			<div class="rt-call" id="rtCall">
+				<!-- <ul>
+					<li class="item">
+						<p>
+							某某海域某型号商船船设备仪器中断某某海域某型号商船船设备仪器中断
+						</p>
+						<p>
+							某某海域某型号商船船设备仪器中断某某海域某型号商船船设备仪器中断
+						</p>
+						<p class="time">
+							2020-09-24 15:18
+						</p>
+					</li>
+				</ul> -->
+			</div>
+
+			<div class="sub-head sub-top" id="test">
+				船舶
+			</div>
+			<div class="rt-btm">
+				<form class="layui-form">
+					<div>
+						<input type="checkbox" value="1" lay-skin="primary" title="加装设备船舶" checked lay-filter="checkShip">
+					</div>
+					<div>
+						<input type="checkbox" value="2" lay-skin="primary" title="获取设备船舶" checked lay-filter="checkShip">
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</body>
+	<script src="https://webapi.amap.com/maps?v=2.0&key=7a080dcd3f59944e543b3669452447a3"></script>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				homes: "js/homes",
+			})
+			.use("homes");
+	</script>
+</html>

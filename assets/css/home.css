@@ -1,0 +1,480 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.map {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+
+.map iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.head {
+	/* position: absolute;
+	left: 0;
+	top: 34px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	z-index: 3; */
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	width: 100%;
+	height: 68px;
+	display: flex;
+	justify-content: center;
+	background: url(../../static/head1.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.head-text {
+	color: #043E98;
+	font-size: 32px;
+	font-weight: 700;
+	margin: auto;
+	position: relative;
+}
+
+.head-text::before {
+	position: absolute;
+	bottom: 12px;
+	left: -143px;
+	content: "";
+	width: 123px;
+	height: 7px;
+	background-image: url(../../static/map1.png);
+}
+
+.head-text::after {
+	position: absolute;
+	bottom: 12px;
+	right: -143px;
+	content: "";
+	width: 123px;
+	height: 7px;
+	background-image: url(../../static/map2.png);
+}
+
+.head-btn {
+	position: absolute;
+	top: 50px;
+	width: 100%;
+	padding: 0 24px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	z-index: 5;
+}
+
+.head-btn>div {
+	display: flex;
+	height: 32px;
+	line-height: 32px;
+}
+
+.head-btn p {
+	width: 80px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 16px;
+	background: #3385FF;
+	border-radius: 3px;
+	margin-right: 16px;
+	cursor: default;
+}
+
+.rt-out {
+	color: #3385FF;
+	cursor: default;
+}
+
+
+/* 左侧搜索 */
+.form-sear {
+	position: absolute;
+	left: 24px;
+	top: 127px;
+	z-index: 2;
+	display: flex;
+}
+
+.sear-box {
+	position: relative;
+}
+
+.formSear {
+	position: absolute;
+	left: 0;
+	z-index: -1;
+}
+
+.form-sear .layui-input {
+	width: 200px;
+	box-sizing: border-box;
+	border: none;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 6px 0px rgba(160, 160, 160, 0.5);
+	border-radius: 3px;
+}
+
+.sear-box .sear-btn {
+	background: #3385FF;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.form-sear img {
+	width: 20px;
+	height: 20px;
+}
+
+
+/* 右上icon */
+.rt-icon {
+	position: absolute;
+	right: 24px;
+	top: 127px;
+	z-index: 2;
+	border: 1px solid red;
+}
+
+.icon-top {
+	height: 50px;
+	line-height: 50px;
+	color: #5C5C5C;
+	font-size: 16px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px 0px rgba(103, 103, 103, 0.5);
+	border-radius: 3px;
+	padding: 0 8px;
+	position: absolute;
+	right: 24px;
+	top: 127px;
+	z-index: 2;
+	display: flex;
+}
+
+.icon-top p {
+	margin: 0 4px;
+	padding: 0 4px;
+	cursor: pointer;
+}
+
+.icon-top p:hover {
+	height: 54px;
+	line-height: 54px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px 0px rgba(103, 103, 103, 0.5);
+	border-radius: 3px;
+	margin-top: -2px;
+}
+
+.icon-top img {
+	width: 22px;
+	height: 22px;
+	vertical-align: middle;
+	margin-right: 2px;
+}
+
+.icon-top span {
+	vertical-align: middle;
+}
+
+/* 测距和地图切换 */
+.icon-btm {
+	color: #5C5C5C;
+	font-size: 16px;
+	display: flex;
+	justify-content: flex-end;
+	position: absolute;
+	right: 24px;
+	top: 197px;
+	z-index: 3;
+}
+
+.icon-btm .btm-div {
+	height: 40px;
+	line-height: 40px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px 0px rgba(103, 103, 103, 0.5);
+	border-radius: 3px;
+	padding: 0 10px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.icon-btm img {
+	width: 22px;
+	height: 22px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.icon-btm .btm-type {
+	padding-right: 2px;
+}
+
+.btm-type .layui-input-inline {
+	height: 40px;
+	line-height: 40px;
+	width: 130px;
+	border: none;
+}
+
+#dele {
+	display: none;
+}
+
+.btm-icon {
+	display: flex;
+	height: 50px;
+	line-height: 50px;
+	color: #aaaaaa;
+	font-size: 16px;
+	background-color: #fff;
+	box-shadow: 0px 4px 4px 0px rgba(103, 103, 103, 0.5);
+	border-radius: 3px;
+	padding: 0 8px;
+	position: absolute;
+	right: 24px;
+	/* bottom: 40px; */
+	bottom: 20px;
+	z-index: 2;
+}
+.btm-icon .layui-icon {
+	margin: 0 4px;
+}
+.btm-icon .icon-box{
+	width: 355px;
+	overflow: hidden;
+	display: flex;
+}
+.icon-box p {
+	margin: 0 4px;
+}
+.icon-box .layui-icon{
+	width: 25px;
+	text-align: center;
+	cursor: pointer;
+}
+.icon-box img {
+	width: 22px;
+	height: 22px;
+	vertical-align: middle;
+	margin-right: 2px;
+}
+
+.icon-box span {
+	vertical-align: middle;
+}
+
+/* 切换地图类型 */
+.icon-type {
+	display: flex;
+	justify-content: flex-end;
+	position: absolute;
+	right: 24px;
+	top: 257px;
+	z-index: 2;
+}
+
+.icon-type .type-div {
+	width: 76px;
+	height: 76px;
+	position: relative;
+	margin: 0 5px;
+	border-radius: 5px;
+	overflow: hidden;
+	cursor: pointer;
+	box-sizing: border-box;
+	border: 3px solid rgba(0, 0, 0, 0);
+}
+
+.icon-type .add {
+	border: 3px solid #0088FF;
+}
+
+.icon-type img {
+	width: 70px;
+	height: 70px;
+}
+
+.type-div p {
+	width: 100%;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	color: #fff;
+	background: rgba(7, 7, 7, 0.3);
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+
+
+
+/* 轨迹弹窗 */
+/* 修改layui,弹窗层css */
+body .drop-demo {
+	box-sizing: border-box;
+}
+
+body .drop-demo .layui-layer-title {
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	font-size: 20px;
+	background: #3385FF;
+	border: none;
+}
+
+body .drop-demo .layui-layer-setwin {
+	top: 11px;
+	right: 11px;
+}
+
+body .drop-demo .layui-layer-ico {
+	width: 20px;
+	height: 20px;
+	background: url(../../static/map15.png) no-repeat;
+}
+
+.drop-demo .layui-tab-title li {
+	width: 80px;
+}
+
+.track {
+	padding: 20px 0px;
+	padding-right: 20px;
+	box-sizing: border-box;
+	display: none;
+
+}
+
+.track .layui-form-item {
+	margin-bottom: 20px;
+}
+
+.track .btn {
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.track .btn button {
+	width: 220px;
+}
+
+.track .cancel {
+	color: #939394;
+	background: #FFFFFF;
+	border: 1px solid #B7B7B7;
+	margin-right: 50px;
+}
+
+.track .cancel:hover {
+	color: #939394;
+}
+
+.track .layui-form-item .subbtn {
+	background: #009567;
+	color: #FFFFFF;
+}
+
+/* 船舶轨迹多个 */
+.ship-line {
+	width: 400px;
+	height: 400px;
+	padding: 20px;
+	box-sizing: border-box;
+	display: none;
+}
+
+body .ship-lines .layui-layer-title {
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	font-size: 20px;
+	background: #3385FF;
+	border: none;
+}
+
+body .ship-lines .layui-layer-setwin {
+	top: 11px;
+	right: 11px;
+}
+
+body .ship-lines .layui-layer-ico {
+	width: 20px;
+	height: 20px;
+	background: url(../../static/map15.png) no-repeat;
+}
+
+body .ship-lines .layui-tab-title li {
+	width: 80px;
+}
+
+/* 表单 */
+/* .ship-form {
+	padding-right: 10px;
+	box-sizing: border-box;
+} */
+
+.ship-line .layui-form-item {
+	margin-bottom: 100px;
+}
+
+.ship-line .layui-form-label {
+	width: 60px;
+}
+
+.ship-line .layui-input-block {
+	margin-left: 90px;
+}
+
+.layui-form-checkbox[lay-skin=primary] {
+	height: 28px !important;
+}
+
+.ship-line .check {
+	width: 500px;
+	height: 318px;
+	overflow: hidden;
+	border: 1px solid #d8d8d8;
+	box-sizing: border-box;
+}
+
+.check-box {
+	width: 520px;
+	height: 100%;
+	padding: 0 10px 10px;
+	box-sizing: border-box;
+	overflow-y: auto;
+}
+
+.check-box p {
+	float: left;
+}
+
+.ship-line .btn {
+	margin-bottom: 0;
+	text-indent: 80px;
+}
+
+.ship-line .btn button {
+	background-color: #00B0FF;
+}

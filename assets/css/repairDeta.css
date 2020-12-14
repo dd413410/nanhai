@@ -1,0 +1,260 @@
+html {
+	width: 680px;
+	height: 100%;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+body {
+	width: 680px;
+	height: 100%;
+}
+
+/* 船舶信息 */
+.lay-form-top {
+	width: 100%;
+	padding: 5px 20px;
+	box-sizing: border-box;
+}
+
+.lay-form-top .layui-form-item {
+	margin-bottom: 2px;
+}
+
+.layui-form-item>.layui-inline {
+	width: 318px;
+}
+
+.layui-form-item .layui-inline,
+.layui-form-item .layui-input-inline {
+	margin-right: 0;
+	margin-bottom: 0px;
+}
+
+.layui-form-item .layui-form-label {
+	width: 90px;
+	color: #606060;
+	font-weight: 400;
+}
+
+.layui-form-item .layui-input-block {
+	margin-left: 120px;
+}
+
+.layui-form-item .layui-input-inline {
+	width: 195px;
+}
+
+.layui-form-item .layui-input {
+	color: #242424;
+
+}
+
+
+/* 维护信息 */
+.fiexd-top {
+	width: 100%;
+	height: 280px;
+	margin: 5px 0;
+	border: 1px solid #009567;
+	padding: 5px 0px;
+	box-sizing: border-box;
+	border-radius: 4px;
+}
+
+.fiexd-top .layui-form-item {
+	margin-bottom: 3px;
+}
+
+.fiexd-top .layui-input-block {
+	width: 500px;
+}
+
+.tab-center .upload .layui-input-inline {
+	width: 100px;
+}
+/* 上传文件列表样式 */
+.form-file {
+	margin-bottom: 0;
+}
+
+.form-file .layui-input-block {
+	width: 500px;
+	height: 101px;
+	margin-left: 120px;
+	border: 1px solid #e6e6e6;
+	border-radius: 2px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.form-file .thead {
+	width: 498px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-bottom: 1px solid #e6e6e6;
+	box-sizing: border-box;
+	background-color: #f2f2f2;
+	overflow: hidden;
+}
+
+.form-file p {
+	float: left;
+	font-size: 14px;
+	padding: 0 3px;
+	box-sizing: border-box;
+	border-right: 1px solid #e6e6e6;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.thead p:last-child {
+	border-right: none;
+}
+
+.form-file .tbody {
+	width: 498px;
+	height: 69px;
+	overflow: hidden;
+}
+
+.form-file #tbody {
+	width: 518px;
+	height: 71px;
+	padding-right: 20px;
+	box-sizing: border-box;
+	overflow-y: auto;
+}
+
+.form-file .file-item {
+	width: 498px;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #e6e6e6;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.file-item p:last-child {
+	border-right: none;
+}
+
+.form-file .file-name {
+	width: 250px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.form-file .file-type {
+	width: 124px;
+}
+
+.form-file .file-btn {
+	width: 124px;
+}
+
+/* 选项卡 */
+.plus-tab {
+	width: 100%;
+	padding: 0 20px;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.plus-tab .tabItem {
+	width: 210px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #939394;
+	font-size: 18px;
+	font-weight: 400;
+	background: #FFFFFF;
+	border: 1px solid #009567;
+	box-sizing: border-box;
+	border-radius: 4px;
+	margin: 5px;
+	margin-left: 0px;
+	cursor: default;
+}
+
+.plus-tab .tabItem:nth-child(3n) {
+	margin-right: 0;
+}
+
+.plus-tab .add {
+	color: #FFFFFF;
+	background-color: #009567;
+}
+
+/* 选项卡内容 */
+.tab-center {
+	width: 100%;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+.tab-center .lay-form {
+	width: 640px;
+	height: 150px;
+	border: 1px solid #009567;
+	box-sizing: border-box;
+	border-radius: 4px;
+}
+
+.tab-center .form-center {
+	height: 150px;
+	padding: 15px 0;
+	box-sizing: border-box;
+	overflow: hidden;
+	display: none;
+}
+
+#tab1 {
+	display: block;
+}
+
+.form-center .layui-form-item {
+	margin-bottom: 2px;
+}
+
+.tab-center .layui-form-label {
+	color: #606060;
+	font-weight: 400;
+}
+
+.tab-center .layui-form-item>.layui-inline {
+	width: 317px;
+}
+
+.tab-center .layui-input-inline {
+	width: 180px;
+}
+
+.form-center .layui-input-block {
+	width: 500px;
+	margin-left: 120px;
+}
+
+/* 底部提交 */
+.form-static {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #060607;
+	font-size: 24px;
+	font-weight: 400;
+	margin: 5px 0;
+	box-sizing: border-box;
+}
+
+.layui-layer-imgbar {
+	position: fixed;
+	left: -9999999999999px !important;
+	bottom: -99999999999999px !important;
+}

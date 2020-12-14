@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title>仪器设备管理-比测信息</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/instData.css">
+	</head>
+	<body>
+		
+
+
+		<div class="list-title">
+			<p>比测记录</p>
+			<p>比测时间</p>
+			<p>下次计划检定/校准/比测时间</p>
+		</div>
+
+		<div class="list-box" id="listBox">
+			<!-- <div class="list-item">
+				<p>第一次比测</p>
+				<p>2020-09-10 13:30</p>
+				<p>2020-09-10 13:30</p>
+			</div> -->
+		</div>
+
+
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				getFn: "lib/getFn",
+				instData: "js/instData",
+			})
+			.use("instData");
+	</script>
+</html>

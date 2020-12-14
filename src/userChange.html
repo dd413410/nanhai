@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title>用户管理-修改信息</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/userChange.css">
+	</head>
+
+	<body>
+		<fom class="layui-form" lay-filter="userForm">
+			<input type="hidden" name="id">
+			<div class="layui-form-item">
+				<label class="layui-form-label">用户名</label>
+				<div class="layui-input-block">
+					<input type="text" name="userName" disabled class="layui-input">
+				</div>
+			</div>
+
+			<!-- <div class="layui-form-item radio" id="gender">
+				<label class="layui-form-label">性别</label>
+				<div class="layui-input-block">
+					<input type="radio" name="gender" value="男" title="男">
+					<input type="radio" name="gender" value="女" title="女">
+				</div>
+			</div> -->
+
+			<div class="layui-form-item radio">
+				<label class="layui-form-label">用户权限</label>
+				<div class="layui-input-block">
+					<input type="radio" name="userLevel" value="1" title="管理员">
+					<input type="radio" name="userLevel" value="0" title="普通用户">
+				</div>
+			</div>
+			
+			<div class="layui-form-item radio">
+				<label class="layui-form-label">联系人</label>
+				<div class="layui-input-block">
+					<input type="text" disabled name="realName" lay-verify="realName" autocomplete="off" placeholder="请输入真实姓名" class="layui-input">
+				</div>
+			</div>
+
+
+			<div class="layui-form-item radio">
+				<label class="layui-form-label">手机号码</label>
+				<div class="layui-input-block">
+					<input type="text" disabled name="mobile" lay-verify="mobile" autocomplete="off" placeholder="请输入手机号码" class="layui-input">
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">单位名称</label>
+				<div class="layui-input-block">
+					<input type="text" name="unit" autocomplete="off" placeholder="请输入单位名称" class="layui-input">
+					<!-- <select id="unit" class="level" name="unit" lay-verify="unit" lay-search>
+						<option value="0">直接选择或搜索选择</option>
+						<option value="1">直接选择或搜索选择</option>
+					</select> -->
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">备注</label>
+				<div class="layui-input-block">
+					<textarea name="remarks" placeholder="请输入备注" class="layui-textarea level"></textarea>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label"></label>
+				<div class="layui-input-block desc">
+					备注说明这个单位的属性是业务、普通、设备供应商还是航运企业
+				</div>
+			</div>
+			<div class="layui-form-item btn">
+				<button type="button" class="layui-btn cancel" onclick="collFn()">取消</button>
+				<button type="submit" class="layui-btn subbtn" lay-submit lay-filter="addBtn">确认</button>
+			</div>
+			
+		</fom>
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				getFn: "lib/getFn",
+				userChange: "js/userChange",
+			})
+			.use("userChange");
+	</script>
+
+</html>

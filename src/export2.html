@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title>观测数据管理-导出2</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/export2.css">
+	</head>
+	<body>
+		
+		<div class="layui-form reg-form">
+			<div class="layui-form-item">
+				<label class="layui-form-label">船舶</label>
+				<div class="layui-input-block">
+					<div id="xmselect"></div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">时间</label>
+				<div class="layui-input-block">
+					<input type="text" id="time" name="time" lay-verify="time" placeholder="请选择时间" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">经度</label>
+				<div class="layui-input-block">
+					<input type="text" name="boatLog" lay-verify="boatLog" placeholder="请输入经度" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">纬度</label>
+				<div class="layui-input-block">
+					<input type="text" name="boatLat" lay-verify="boatLat" placeholder="请输入纬度" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item subBtn">
+				<button class="layui-btn" lay-submit lay-filter="subbtn">导出</button>
+			</div>
+		</div>
+
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script src="../assets/lib/xmselect.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				getFn: "lib/getFn",
+				export2: "js/export2",
+			})
+			.use("export2");
+	</script>
+
+</html>

@@ -1,0 +1,169 @@
+html {
+	width: 680px;
+	height: 100%;
+	border-radius: 8px;
+	overflow: hidden;
+	/* padding-top: 40px; */
+	box-sizing: border-box;
+}
+
+body {
+	width: 700px;
+	height: 100%;
+	overflow-y: auto;
+}
+.sub-tle {
+	width: 100%;
+	height: 50px;
+	background: url(../../static/zyc4.png) no-repeat;
+	background-size: 100% 100%;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+
+.sub-tle img {
+	width: 20px;
+	height: 20px;
+	margin-top: 15px;
+	margin-right: 5px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.sub-tle span {
+	display: inline-block;
+	color: #FFFFFF;
+	font-size: 20px;
+	line-height: 50px;
+}
+
+.deta-box {
+	padding: 10px 0;
+	box-sizing: border-box;
+}
+
+.layui-form-item {
+	margin-bottom: 5px;
+}
+.layui-form-item .layui-form-label{
+	font-weight: 400;
+	color: #606060;
+}
+.layui-form-item .layui-input{
+	color: #242424;
+}
+
+.deta-box .layui-textarea {
+	width: 515px;
+	resize: none;
+}
+
+.deta-sub-tle{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	color: #242424;
+	font-size: 20px;
+	font-weight: 400;
+	padding-left: 20px;
+	box-sizing: border-box;
+	margin: 10px 0;
+}
+
+.form-block .layui-input{
+	width: 515px;
+}
+
+.form-desc .layui-input-block {
+	width: 515px;
+	height: 100px;
+	border: 1px solid #e6e6e6;
+	border-radius: 2px;
+	box-sizing: border-box;
+}
+.form-desc .thead {
+	width: 513px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-bottom: 1px solid #e6e6e6;
+	box-sizing: border-box;
+	background-color: #f2f2f2;
+	overflow: hidden;
+}
+
+.form-desc p {
+	float: left;
+	font-size: 14px;
+	padding: 0 3px;
+	box-sizing: border-box;
+	border-right: 1px solid #e6e6e6;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.thead p:last-child{
+	border-right: none;
+}
+.form-desc .tbody {
+	width: 513px;
+	height: 70px;
+	overflow: hidden;
+}
+
+.tbodys {
+	width: 533px;
+	height: 71px;
+	padding-right: 20px;
+	box-sizing: border-box;
+	overflow-y: auto;
+}
+
+.form-desc .file-item {
+	width: 513px;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #e6e6e6;
+	box-sizing: border-box;
+	text-align: center;
+}
+.file-item p:last-child{
+	border-right: none;
+}
+.form-desc .file-name {
+	width: 273px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.form-desc .file-type{
+	width: 120px;
+}
+.form-desc .file-btn {
+	width: 120px;
+}
+
+.layui-layer-imgbar {
+  position: fixed;
+  left: -9999999999999px !important;
+  bottom: -99999999999999px !important;
+}
+
+.form-btn {
+	width: 100%;
+	height: 50px;
+	padding: 5px 0;
+	box-sizing: border-box;
+	margin-bottom: 0;
+	display: flex;
+	justify-content: center;
+}
+.form-btn button {
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	color: #FFFFFF;
+	font-size: 18px;
+	border-radius: 5px;
+	background: #009567;
+}

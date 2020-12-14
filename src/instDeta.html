@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title>仪器设备管理-修改添加</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/instDeta.css">
+	</head>
+	<body>
+		<div class="sub-tle">
+			仪器信息
+		</div>
+
+		<form class="layui-form" lay-filter="instForm">
+			<div class="form-deta">
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">序号</label>
+						<div class="layui-input-inline">
+							<input type="text" name="instrumentNum" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">价格</label>
+						<div class="layui-input-inline">
+							<input type="text" name="price" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">仪器名称</label>
+						<div class="layui-input-inline">
+							<input type="text" name="instrumentName" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">仪器状态</label>
+						<div class="layui-input-inline">
+							<select name="instrumentStatus">
+								<option value="1">在用</option>
+								<option value="2">备品备件</option>
+								<option value="3">损坏</option>
+								<option value="4">维修</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">仪器类别</label>
+						<div class="layui-input-inline">
+							<input type="text" name="instrumentType" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">内部编号</label>
+						<div class="layui-input-inline">
+							<input type="text" name="internalNum" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">仪器型号</label>
+						<div class="layui-input-inline">
+							<input type="text" name="instrumentModel" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">采购时间</label>
+						<div class="layui-input-inline">
+							<input type="text" name="purchaseTime" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">仪器序列号</label>
+						<div class="layui-input-inline">
+							<input type="text" name="instrumentNumber" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">校验时间</label>
+						<div class="layui-input-inline">
+							<input type="text" name="fixTime" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+				</div>
+
+				<div class="layui-form-item form-desc">
+					<label class="layui-form-label">证书</label>
+					<div class="layui-input-block">
+						<div class="thead">
+							<p class="file-name">文件名</p>
+							<p class="file-type">文件名</p>
+							<p class="file-btn">
+								操作
+							</p>
+						</div>
+						<div class="tbody">
+							<div id="tbody">
+								<!-- <div class="file-item">
+									<p class="file-name">文件名</p>
+									<p class="file-type">文件名</p>
+									<p class="file-btn">
+										<button class="layui-btn layui-btn-xs demo-reload">下载</button>
+									</p>
+								</div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sub-tle">
+				比测信息
+			</div>
+
+			<div class="form-data">
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">比测记录</label>
+						<div class="layui-input-inline">	
+							<a href="#" id="file">文档</a>
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">比测时间</label>
+						<div class="layui-input-inline">
+							<input type="text" name="testTime" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item label">
+					<label class="layui-form-label">下次计划检定/校准/比测时间</label>
+					<div class="layui-input-block">
+						<input type="text" name="nextTime" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+			</div>
+
+			<div class="sub-tle">
+				安装信息
+			</div>
+
+			<div class="form-data">
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">安装时间</label>
+						<div class="layui-input-inline">
+							<input type="text" name="installTime" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">存放地点</label>
+						<div class="layui-input-inline">
+							<input type="text" name="area" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">安装船舶</label>
+						<div class="layui-input-inline">
+							<input type="text" name="installBoat" autocomplete="off" class="layui-input">
+							
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">安装位置</label>
+						<div class="layui-input-inline">
+							<input type="text" name="installSeat" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</form>
+
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				getFn: "lib/getFn",
+				instDeta: "js/instDeta",
+			})
+			.use("instDeta");
+	</script>
+</html>

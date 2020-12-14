@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/map.css">
+	</head>
+	<body>
+		<div id="map"></div>
+		<div class="lnglat" id="lnglat"></div>
+	</body>
+	<!-- <script src="https://webapi.amap.com/maps?v=2.0&key=7a080dcd3f59944e543b3669452447a3"></script> -->
+	<script src="https://webapi.amap.com/maps?v=2.0&key=7a080dcd3f59944e543b3669452447a3"></script>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				map3: "js/map3",
+			})
+			.use("map3");
+	</script>
+
+</html>

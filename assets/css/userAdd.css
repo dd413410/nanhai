@@ -1,0 +1,67 @@
+body {
+	width: 100%;
+	height:610px;
+	padding: 15px 40px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.title {
+	height: 60px;
+	line-height: 60px;
+	color: #009567;
+	font-size: 18px;
+}
+.layui-form-item {
+	box-sizing: border-box;
+	margin-bottom: 15px;
+}
+
+.layui-form-item .layui-form-label {
+	font-size: 16px;
+	color: #939394;
+	padding: 9px 10px 9px 0;
+}
+.layui-form-label i{
+	color: #FF1E1E;
+}
+
+.layui-input-block{
+	color: #242424;
+}
+.layui-textarea {
+	resize: none;
+}
+.desc{
+	font-size: 12px;
+	font-weight: 400;
+	color: #939394;
+}
+.desc i{
+	color: #FF1E1E;
+}
+
+.btn {
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.btn button {
+	width: 158px;
+}
+
+.cancel {
+	color: #939394;
+	background: #FFFFFF;
+	border: 1px solid #B7B7B7;
+	margin-right: 50px;
+}
+
+.cancel:hover {
+	color: #939394;
+}
+
+.layui-form-item .subbtn {
+	background: #009567;
+	color: #FFFFFF;
+}

@@ -1,0 +1,122 @@
+body {
+	padding: 0 40px;
+	box-sizing: border-box;
+	margin-top: 2px;
+}
+
+.title {
+	display: flex;
+	margin-bottom: 25px;
+}
+
+.title>div {
+	display: flex;
+	margin-right: 20px;
+}
+
+.title>div label {
+	color: #0E0E0E;
+	font-size: 18px;
+	line-height: 36px;
+	margin-right: 5px;
+}
+.title .title-ipt-box{
+	width: 240px;
+}
+.title .title-time-box{
+	width: 300px;
+}
+.title>div button {
+	height: 32px;
+	line-height: 32px;
+	margin-top: 2px;
+}
+
+.subbtn {
+	background-color: #00B0FF;
+}
+
+.addbtn {
+	background-color: #009567;
+}
+
+/* table */
+
+/* .layui-table-cell{
+	height:auto;
+	overflow:visible;
+	text-overflow:inherit;
+} */
+
+
+.layui-table-header,
+.layui-table thead tr {
+	background-color: transparent;
+}
+
+.layui-table th {
+	color: #929293;
+	font-size: 16px;
+}
+
+.layui-table td {
+	color: #0E0E0E;
+	font-size: 18px;
+	font-family: Source Han Sans CN;
+}
+
+.layui-table-view,
+.layui-table-header,
+.layui-table td,
+.layui-table th {
+	/* border: none; */
+}
+
+.layui-table-cell {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.layui-table-page {
+	height: 78px;
+	text-align: right;
+	padding-top: 37px;
+}
+
+.btn {
+	float: left;
+	height: 50px;
+	line-height: 20px;
+	padding: 15px 0;
+	box-sizing: border-box;
+	margin-left: 10px;
+	overflow: hidden;
+}
+
+.btn img {
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.btn span {
+	height: 20px;
+	line-height: 20px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.btn-change {
+	color: #FFB203;
+}
+
+.btn-res {
+	color: #018377;
+}
+
+.btn-dele i {
+	font-size: 20px;
+	color: red;
+}

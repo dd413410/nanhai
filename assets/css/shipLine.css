@@ -1,0 +1,49 @@
+body{
+	width: 100%;
+	height: 100%;
+	/* padding: 20px; */
+	box-sizing: border-box;
+}
+/* 表单 */
+.ship-form{
+	padding-right: 10px;
+	box-sizing: border-box;
+}
+
+.ship-form .layui-form-item{
+	margin-bottom: 7px;
+}
+.ship-form .layui-form-label{
+	width: 60px;
+}
+.ship-form .layui-input-block{
+	margin-left: 90px;
+}
+.layui-form-checkbox[lay-skin=primary]{
+	height: 28px !important;
+}
+.ship-form .check {
+	width: 500px;
+	height:318px;
+	overflow: hidden;
+	border: 1px solid #d8d8d8;
+	box-sizing: border-box;
+}
+.check-box {
+	width: 520px;
+	height: 100%;
+	padding: 0 10px 10px;
+	box-sizing: border-box;
+	overflow-y: auto;
+	
+}
+.check-box  p{
+	float: left;
+}
+.ship-form .btn {
+	margin-bottom: 0;
+	text-indent: 80px;
+}
+.ship-form .btn button {
+	background-color: #00B0FF;
+}

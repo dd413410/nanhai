@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>用户管理-用户信息</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/user.css">
+	</head>
+	<body>
+		<div class="layui-form title">
+			<div>
+				<label>用户名</label>
+				<div class="layui-sele">
+					<input type="text" name="username" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+				</div>
+			</div>
+
+			<div>
+				<label>用户权限</label>
+				<div class="layui-sele">
+					<select name="userLevel">
+						<option value="">全部</option>
+						<option value="1">管理员</option>
+						<option value="0">普通用户</option>
+					</select>
+				</div>
+			</div>
+
+			<div>
+				<label>用户状态</label>
+				<div class="layui-sele">
+					<select name="isPass">
+						<option value="3">全部</option>
+						<option value="2">拒绝</option>
+						<option value="1">通过</option>
+						<option value="0">待审批</option>
+					</select>
+				</div>
+			</div>
+
+			<div>
+				<button type="submit" class="layui-btn subbtn" lay-submit lay-filter="queryBtn">查询</button>
+				<!-- <button class="layui-btn" id="addBtn">新增</button> -->
+				<button class="layui-btn" lay-submit lay-filter="addBtn" name="isBtn">新增</button>
+			</div>
+		</div>
+
+		<table class="layui-hide" id="table" lay-filter="table"></table>
+
+		<!-- 全部权限的显示 -->
+		<script type="text/html" id="toolbar">
+			<a class="btn" lay-event="4">
+				<img src="../static/src8.png">
+				详细信息
+			</a>
+			<!-- 待审核 -->
+			{{#if(d.isPass ==0&&d.level>d.userLevel){}}
+			<a class="btn" lay-event="1">
+				<img src="../static/src8.png">
+				<span>通过</span>
+			</a>
+			<a class="btn" lay-event="2">
+				 <img src="../static/src9.png">
+				 <span>拒绝</span>
+			</a>
+			<!-- 普通用户 -->
+			{{#} if(d.isPass ==1&&d.level>d.userLevel){}}
+			<a class="btn" lay-event="5">
+				<img src="../static/src11.png">
+				修改
+			</a>
+			<a class="btn btn-change" lay-event="6">
+				<img src="../static/src14.png">
+				权限分配
+			</a>
+			<a class="btn btn-dele" lay-event="3">
+				<img src="../static/src10.png">
+				<span>删除</span>
+			</a>
+			<!-- 管理员 -->
+			
+			<!-- 审核拒绝 -->
+			{{#}if(d.isPass ==2){}}
+			<a class="btn btn-dele" lay-event="3">
+				<img src="../static/src10.png">
+				<span>删除</span>
+			</a>
+			{{#}}}
+		</script>
+
+		<!-- 只有查看权限的显示 -->
+		<script type="text/html" id="toolbars">
+			<a class="btn" lay-event="4">
+				<img src="../static/src8.png">
+				详细信息
+			</a>
+		</script>
+
+		<!-- 管理员 -->
+		<!-- {{#} if(d.isPass ==1&&d.userLevel==1){}}
+		<a class="btn btn-change" lay-event="4">详细信息</a> -->
+
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				thead: "modul/thead",
+				user: "js/user",
+			})
+			.use("user");
+	</script>
+</html>

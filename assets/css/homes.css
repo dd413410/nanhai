@@ -1,0 +1,433 @@
+html {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
+#map {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.head {
+	width: 100%;
+	height:150px;
+	/* height: 175px; */
+	line-height: 100px;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 34px;
+	font-weight: 600;
+	background: url(../../static/head3.png) no-repeat;
+	/* background: url(../../static/zh1.png) no-repeat; */
+	background-size: 100% 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 3;
+}
+
+.head-btn {
+	position: absolute;
+	left: 0;
+	top: 50px;
+	width: 100%;
+	padding: 0 24px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	z-index: 5;
+}
+
+.head-btn>div {
+	display: flex;
+	height: 32px;
+	line-height: 32px;
+}
+
+.head-btn p {
+	width: 80px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 16px;
+	background: #009385;
+	border-radius: 3px;
+	margin-right: 16px;
+	cursor: default;
+}
+
+.rt-out {
+	color: #08C0B1;
+	cursor: default;
+}
+
+.sub-head {
+	width: 100%;
+	height: 55px;
+	line-height: 40px;
+	text-indent: 75px;
+	color: #FFFFFF;
+	font-size: 28px;
+	background: url(../../static/zh2.png) no-repeat;
+	background-size: 100% 100%;
+	margin-bottom: 20px;
+}
+
+.sub-top {
+	margin-top: 20px;
+}
+
+/* 左侧 */
+
+.lt-box {
+	width: 560px;
+	height: 100vh;
+	padding: 115px 40px 0 40px;
+	box-sizing: border-box;
+	background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+}
+
+
+.box-btn {
+	width: 100%;
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.box-btn p {
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	border: 1px solid #0471C1;
+	padding: 0 10px;
+	box-shadow: 0px 2px 29px 0px rgba(3, 139, 247, 0.4) inset;
+	border-radius: 3px;
+	font-size: 18px;
+	color: #FFFFFF;
+	letter-spacing: 1px;
+	margin-right: 25px;
+}
+
+.box-btn p.add {
+	box-shadow: 0px 2px 29px 0px rgba(3, 139, 247, 1) inset;
+}
+
+.box-cir {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: 400;
+	margin-top: 20px;
+}
+
+.box-cir .cir-img {
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	margin-bottom: 15px;
+	color: #FFFFFF;
+	font-size: 32px;
+	font-family: TRENDS;
+	letter-spacing: 2px;
+}
+
+.cir-img1 {
+	background: url(../../static/zh6.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.cir-img2 {
+	background: url(../../static/zh7.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.cir-img3 {
+	background: url(../../static/zh8.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.cir-img4 {
+	background: url(../../static/zh9.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.lt-prog {
+	width: 100%;
+	height: 80px;
+	margin: 30px 0;
+
+}
+
+.pro-box {
+	display: flex;
+}
+
+.pro-box label {
+	width: 35px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.pro-box>div {
+	width: 445px;
+	height: 20px;
+	margin-bottom: 10px;
+	padding-left: 36px;
+	box-sizing: border-box;
+}
+
+.layui-progress {
+	background: rgba(0, 255, 231, 0.08);
+}
+
+.pro-item1 {
+	background: #0ACB6F;
+}
+
+.pro-item2 {
+	background: #F7AF50;
+}
+
+.pro-item3 {
+	background: #FF1E1E;
+}
+
+.lt-prog .layui-progress-bar {
+	height: 20px;
+}
+
+.layui-progress-text {
+	top: 0;
+	right: 10px;
+	line-height: 20px;
+	color: #FFFFFF;
+	font-size: 20px;
+}
+
+
+.lt-call {
+	width: 100%;
+	overflow: hidden;
+	flex: 1;
+}
+
+.lt-call .item {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+	margin-bottom: 5px;
+	color: #FFFFFF;
+	font-size: 16px;
+	letter-spacing: 1px;
+	border-radius: 20px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	background: rgba(33, 159, 144, 0.1);
+}
+
+.lt-call p {
+	width: 280px;
+	padding: 3px;
+	box-sizing: border-box;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.lt-call .time {
+	width: 180px;
+}
+
+.lt-btm {
+	height: 40px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.lt-btm div {
+	height: 26px;
+	line-height: 26px;
+	font-size: 16px;
+	color: #FFFFFF;
+	letter-spacing: 1px;
+	margin-top: 2px;
+}
+
+.lt-btm img {
+	width: 26px;
+	height: 26px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.lt-btm span {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* 右侧 */
+.rt-box {
+	width: 560px;
+	height: 100vh;
+	padding: 115px 40px 0 40px;
+	box-sizing: border-box;
+	background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+}
+
+.rt-top {
+	margin-bottom: 30px;
+}
+
+.rt-top-t {
+	display: flex;
+	justify-content: space-between;
+	color: #FFFFFF;
+	font-size: 18px;
+	line-height: 25px;
+	letter-spacing: 1px;
+}
+
+.rt-top-t p {
+	flex: 1;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.rt-top-t span {
+	color: #08C0B1;
+	font-size: 16px;
+}
+
+.rt-top-b {
+	display: flex;
+	flex-wrap: wrap;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+.rt-top-b div {
+	width: 120px;
+	height: 16px;
+	line-height: 16px;
+	margin-top: 22px;
+	display: flex;
+}
+
+.rt-top-b img {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	vertical-align: top;
+	margin-top: 3px;
+}
+.rt-top-b p{
+	display: inline-block;
+	width: 110px;
+	padding: 0 3px;
+	box-sizing: border-box;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.rt-top-b span {
+	display: inline-block;
+	color: #08C0B1;
+	font-style: normal;
+}
+.rt-call {
+	width: 100%;
+	overflow: hidden;
+	flex: 1;
+}
+
+.rt-call .item {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+	margin-bottom: 5px;
+	color: #FFFFFF;
+	font-size: 16px;
+	letter-spacing: 1px;
+	border-radius: 20px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	background: rgba(33, 159, 144, 0.1);
+}
+
+.rt-call p {
+	width: 110px;
+	text-align: center;
+	padding: 0 3px;
+	box-sizing: border-box;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.rt-call .time {
+	width: 130px;
+}
+
+.rt-btm {
+	height: 40px;
+}
+
+.rt-btm .layui-form {
+	width: 100%;
+	display: flex;
+}
+
+.rt-btm div {
+	flex: 1;
+}
+
+.rt-btm div span {
+	color: #FFFFFF !important;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
+	letter-spacing: 1px;
+}
+
+
+/* 高德地图 */
+.amap-logo {
+	display: none !important;
+}
+
+.amap-copyright {
+	visibility: hidden !important;
+}

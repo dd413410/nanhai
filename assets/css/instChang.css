@@ -1,0 +1,176 @@
+html {
+	width: 680px;
+	height: 100%;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+body {
+	width: 680px;
+	height: 100%;
+	overflow-y: auto;
+}
+
+.sub-tle {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-indent: 20px;
+	color: #242424;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.layui-form {
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+.layui-form-item {
+	margin-bottom: 4px;
+}
+
+.layui-form-item .layui-form-label {
+	color: #606060;
+	font-weight: 400;
+}
+
+.layui-form-item .layui-inline {
+	margin-right: 0;
+	margin-bottom: 0px;
+}
+
+.layui-form-item .layui-input {
+	color: #242424;
+}
+
+.layui-form-item .layui-input-inline {
+	width: 200px;
+	margin-right: 0;
+}
+.upload .layui-input-inline{
+	width: 100px;
+}
+.form-desc{
+	margin-bottom: 0;
+}
+.form-desc .layui-input-block {
+	width: 515px;
+	height: 128px;
+	border: 1px solid #e6e6e6;
+	border-radius: 2px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.form-desc .thead{
+	width: 513px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-bottom: 1px solid #e6e6e6;
+	box-sizing: border-box;
+	background-color: #f2f2f2;
+	overflow: hidden;
+}
+.form-desc p{
+	float: left;
+	font-size: 14px;
+	padding: 0 3px;
+	box-sizing: border-box;
+	border-right: 1px solid #e6e6e6;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.thead p:last-child{
+	border-right: none;
+}
+.form-desc .tbody{
+	width: 513px;
+	height:96px;
+	overflow: hidden;
+}
+#tbody{
+	width: 533px;
+	height: 97px;
+	padding-right: 20px;
+	box-sizing: border-box;
+	overflow-y: auto;
+}
+.form-desc .file-item{
+	width: 513px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-bottom: 1px solid #e6e6e6;
+	box-sizing: border-box;
+}
+.file-item p:last-child{
+	border-right: none;
+}
+.form-desc .file-name {
+	width: 273px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.form-desc .file-type{
+	width: 120px;
+}
+.form-desc .file-btn {
+	width: 120px;
+}
+
+/* 比测信息 */
+.form-data {
+	padding: 12px 0px;
+	border: 1px solid #009567;
+	box-sizing: border-box;
+	border-radius: 4px;
+}
+
+.form-data a {
+	display: block;
+	height: 38px;
+	line-height: 38px;
+	color: #242424;
+	font-size: 20px;
+	text-decoration: underline;
+}
+#addBtn{
+	/* position: fixed;
+	left: -9999999999px;
+	top: -9999999999px; */
+	display: none;
+}
+
+.form-data .label .layui-form-label {
+	width: 180px;
+}
+
+.form-data .label .layui-input-block {
+	width: 415px;
+	margin-left: 210px;
+}
+
+.form-data .layui-form .layui-input-inline {
+	width: 180px;
+}
+
+.btn {
+	height: 50px;
+	margin-bottom: 0;
+	display: flex;
+	justify-content: center;
+	padding: 6px 0;
+	box-sizing: border-box;
+}
+.layui-form-item .subbtn {
+	width: 160px;
+	background: #009567;
+	color: #FFFFFF;
+}
+.layui-layer-imgbar {
+  position: fixed;
+  left: -9999999999999px !important;
+  bottom: -99999999999999px !important;
+}

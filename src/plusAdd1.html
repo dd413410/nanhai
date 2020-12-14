@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title>志愿船维护管理-设备加装记录整体查询-设备加改装记录</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/plusAdd.css">
+	</head>
+	<body>
+		<form class="layui-form" lay-filter="shipDeta">
+			<div class="lay-form-top">
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">志愿船名称</label>
+						<div class="layui-input-inline">
+							<select id="formSear" lay-search lay-filter="check" lay-verify="boatName">
+								<!-- <option value="">直接选择或搜索选择</option> -->
+							</select>
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">志愿船呼号</label>
+						<div class="layui-input-inline">
+							<input type="text" name="boatId" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">船舶联系人</label>
+						<div class="layui-input-inline">
+							<input type="text" name="boatContact" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">电话</label>
+						<div class="layui-input-inline">
+							<input type="text" name="boatMobile" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">正常吃水深度</label>
+						<div class="layui-input-inline">
+							<input type="text" name="boatNormalDepth" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">满载吃水深度</label>
+						<div class="layui-input-inline">
+							<input type="text" name="boatFullDepth" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="plus-tab">
+				<div class="tab-item add" tab="tab1">
+					通信模块
+				</div>
+				<div class="tab-item" tab="tab2">
+					温盐传感器
+				</div>
+				<div class="tab-item" tab="tab3">
+					湿度传感器
+				</div>
+
+				<div class="tab-item" tab="tab4">
+					皮温传感器
+				</div>
+				<div class="tab-item" tab="tab5">
+					能见度传感器
+				</div>
+				<div class="tab-item" tab="tab6">
+					大气压传感器
+				</div>
+
+				<div class="tab-item" tab="tab7">
+					风向风速传感器
+				</div>
+				<div class="tab-item" tab="tab8">
+					船舶姿态传感器
+				</div>
+				<div class="tab-item" tab="tab9">
+					船载智能采集控制单元
+				</div>
+			</div>
+			<!-- 选项卡内容 -->
+			<div class="tab-center">
+				<div class="layui-form fiexd-top">
+					<div class="layui-form-item">
+						<div class="layui-inline">
+							<label class="layui-form-label">加改装时间</label>
+							<div class="layui-input-inline">
+								<input type="text" name="fixTime" lay-verify="fixTime" autocomplete="off" placeholder="请选择加改装时间" class="layui-input time-item">
+							</div>
+						</div>
+						<div class="layui-inline">
+							<label class="layui-form-label">加改装地址</label>
+							<div class="layui-input-inline">
+								<input type="text" name="installAddress" lay-verify="installAddress" autocomplete="off" placeholder="请输入加改装地址"
+								 class="layui-input">
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 根据选项卡切换 -->
+				<div class="lay-form">
+					<!-- 通信模块 -->
+					<div class="form-center" id="tab1">
+						<div class="layui-form-item">
+							<label class="layui-form-label">安装单位</label>
+							<div class="layui-input-block">
+								<input type="text" name="fixUnit" autocomplete="off" placeholder="请输入安装单位" class="layui-input">
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">安装人员</label>
+							<div class="layui-input-block">
+								<input type="text" name="fixPeople" lay-verify="fixPeople" autocomplete="off" placeholder="请输入安装人员姓名;多个以,隔开"
+								 class="layui-input">
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">联系方式</label>
+							<div class="layui-input-block">
+								<input type="text" name="fixMobile" lay-verify="fixMobile" autocomplete="off" placeholder="请输入安装人员联系方式;多个以,隔开"
+								 class="layui-input">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<div class="layui-inline">
+								<label class="layui-form-label">型号/序列号</label>
+								<div class="layui-input-inline">
+									<input type="text" name="sensorName" autocomplete="off" placeholder="请输入型号/序列号" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-inline">
+								<label class="layui-form-label">发送频率</label>
+								<div class="layui-input-inline">
+									<input type="text" name="frequency" autocomplete="off" placeholder="请输入发送频率" class="layui-input">
+								</div>
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<div class="layui-inline">
+								<label class="layui-form-label">验收人</label>
+								<div class="layui-input-inline">
+									<input type="text" name="examinPeople" lay-verify="examinPeople" autocomplete="off" placeholder="请输入验收人" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-inline">
+								<label class="layui-form-label">联系方式</label>
+								<div class="layui-input-inline">
+									<input type="text" name="examineMobile" lay-verify="examineMobile" autocomplete="off" placeholder="请输入验收人联系方式"
+									 class="layui-input">
+								</div>
+							</div>
+						</div>
+
+						<div class="layui-form-item upload">
+							<label class="layui-form-label">备注</label>
+							<div class="layui-input-inline">
+								<button type="button" class="layui-btn layui-btn-normal" id="fileBtn">选择文件</button>
+							</div>
+							<div class="layui-input-inline">
+								<button type="button" class="layui-btn" id="uploadBtn">开始上传</button>
+							</div>
+						</div>
+
+						<div class="layui-form-item form-desc">
+							<label class="layui-form-label"></label>
+							<div class="layui-input-block">
+								<div class="thead">
+									<p>文件名</p>
+									<p>大小</p>
+									<p>状态</p>
+									<p>操作</p>
+								</div>
+								<div class="tbody">
+									<div id="tbody">
+										<!-- <div class="file-item">
+											<p>文件名文件名文件名文件名文件名文件名文件名文件名</p>
+											<p>大小</p>
+											<p>状态</p>
+											<p>操作</p>
+										</div>
+										<div class="file-item">
+											<p>文件名</p>
+											<p>大小</p>
+											<p>状态</p>
+											<p>操作</p>
+										</div>
+										<div class="file-item">
+											<p>文件名</p>
+											<p>大小</p>
+											<p>状态</p>
+											<p>操作</p>
+										</div> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<!-- 温盐传感器 -->
+					<div class="form-center form-center-add" id="tab2">
+						<div class="layui-form-item">
+							<label class="layui-form-label">型号/序列号</label>
+							<div class="layui-input-block">
+								<input type="text" name="warmSaltCode" autocomplete="off" placeholder="请输入型号/序列号" class="layui-input">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">检定时间</label>
+							<div class="layui-input-block">
+								<input type="text" name="warmSaltTime" lay-verify="regDeta" autocomplete="off" placeholder="请选择检定时间" class="layui-input time-item">
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">安装方法</label>
+							<div class="layui-input-block">
+								<input type="text" name="installMethod" autocomplete="off" placeholder="请输入安装方法" class="layui-input">
+							</div>
+						</div>
+					</div>
+
+
+
+					<!-- 湿度传感器 -->
+					<div class="form-center form-center-add" id="tab3">
+						<div class="layui-form-item">
+							<label class="layui-form-label">型号/序列号</label>
+							<div class="layui-input-block">
+								<input type="text" name="huCode" autocomplete="off" placeholder="请输入型号/序列号" class="layui-input">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">检定时间</label>
+							<div class="layui-input-block">
+								<input type="text" name="huTime" lay-verify="regDeta" autocomplete="off" placeholder="请选择检定时间" class="layui-input time-item">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">安装时间</label>
+							<div class="layui-input-block">
+								<input type="text" name="huInstallTime" lay-verify="regDeta" autocomplete="off" placeholder="请选择安装时间" class="layui-input time-item">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">距离水面高度</label>
+							<div class="layui-input-block">
+								<input type="text" name="huHeight" autocomplete="off" placeholder="请输入距离水面高度" class="layui-input">
+							</div>
+						</div>
+					</div>
+
+					<!-- 皮温传感器 -->
+					<div class="form-center form-center-add" id="tab4">
+						<div class="layui-form-item">
+							<label class="layui-form-label">型号/序列号</label>
+							<div class="layui-input-block">
+								<input type="text" name="pwCode" autocomplete="off" placeholder="请输入型号/序列号" class="layui-input">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">检定时间</label>
+							<div class="layui-input-block">
+								<input type="text" name="pwTime" lay-verify="regDeta" autocomplete="off" placeholder="请选择检定时间" class="layui-input time-item">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">安装时间</label>
+							<div class="layui-input-block">
+								<input type="text" name="pwInstallTime" lay-verify="regDeta" autocomplete="off" placeholder="请选择安装时间" class="layui-input time-item">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">距离水面高度</label>
+							<div class="layui-input-block">
+								<input type="text" name="pwHeight" autocomplete="off" placeholder="请输入距离水面高度" class="layui-input">
+							</div>
+						</div>
+					</div>
+
+					<!-- 能见度传感器 -->
+					<div class="form-center form-center-add" id="tab5">
+						<div class="layui-form-item">
+							<label class="layui-form-label">型号/序列号</label>
+							<div class="layui-input-block">
+								<input type="text" name="viCode" autocomplete="off" placeholder="请输入型号/序列号" class="layui-input">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">检定时间</label>
+							<div class="layui-input-block">
+								<input type="text" name="viTime" lay-verify="regDeta" autocomplete="off" placeholder="请选择检定时间" class="layui-input time-item">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">安装时间</label>
+							<div class="layui-input-block">
+								<input type="text" name="viInstallTime" lay-verify="regDeta" autocomplete="off" placeholder="请选择安装时间" class="layui-input time-item">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">距离水面高度</label>
+							<div class="layui-input-block">
+								<input type="text" name="viHeight" autocomplete="off" placeholder="请输入距离水面高度" class="layui-input">
+							</div>
+						</div>
+					</div>
+
+					<!-- 大气压传感器 -->
+					<div class="form-center form-center-add" id="tab6">
+						<div class="layui-form-item">
+							<label class="layui-form-label">型号/序列号</label>
+							<div class="layui-input-block">
+								<input type="text" name="preCode" autocomplete="off" placeholder="请输入型号/序列号" class="layui-input">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">检定时间</label>
+							<div class="layui-input-block">
+								<input type="text" name="preTime" lay-verify="regDeta" autocomplete="off" placeholder="请选择检定时间" class="layui-input time-item">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">安装时间</label>
+							<div class="layui-input-block">
+								<input type="text" name="preInstallTime" lay-verify="regDeta" autocomplete="off" placeholder="请选择安装时间" class="layui-input time-item">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">距离水面高度</label>
+							<div class="layui-input-block">
+								<input type="text" name="preHeight" autocomplete="off" placeholder="请输入距离水面高度" class="layui-input">
+							</div>
+						</div>
+					</div>
+
+					<!-- 风向风速传感器 -->
+					<div class="form-center form-center-add" id="tab7">
+						<div class="layui-form-item">
+							<label class="layui-form-label">型号/序列号</label>
+							<div class="layui-input-block">
+								<input type="text" name="wdCode" autocomplete="off" placeholder="请输入型号/序列号" class="layui-input">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">检定时间</label>
+							<div class="layui-input-block">
+								<input type="text" name="wdTime" lay-verify="regDeta" autocomplete="off" placeholder="请选择检定时间" class="layui-input time-item">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">安装时间</label>
+							<div class="layui-input-block">
+								<input type="text" name="wdInstallTime" lay-verify="regDeta" autocomplete="off" placeholder="请选择安装时间" class="layui-input time-item">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">距离水面高度</label>
+							<div class="layui-input-block">
+								<input type="text" name="wdHeight" autocomplete="off" placeholder="请输入距离水面高度" class="layui-input">
+							</div>
+						</div>
+					</div>
+
+					<!-- 船舶姿态传感器 -->
+					<div class="form-center form-center-add" id="tab8">
+						<div class="layui-form-item">
+							<label class="layui-form-label">型号/序列号</label>
+							<div class="layui-input-block">
+								<input type="text" name="atCode" autocomplete="off" placeholder="请输入型号/序列号" class="layui-input">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">检定时间</label>
+							<div class="layui-input-block">
+								<input type="text" name="atTime" lay-verify="regDeta" autocomplete="off" placeholder="请选择检定时间" class="layui-input time-item">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">安装时间</label>
+							<div class="layui-input-block">
+								<input type="text" name="atInstallTime" lay-verify="regDeta" autocomplete="off" placeholder="请选择安装时间" class="layui-input time-item">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">距离水面高度</label>
+							<div class="layui-input-block">
+								<input type="text" name="atHeight" autocomplete="off" placeholder="请输入距离水面高度" class="layui-input">
+							</div>
+						</div>
+					</div>
+
+
+					<!-- 船载智能采集控制单元 -->
+					<div class="form-center form-center-add" id="tab9">
+						<div class="layui-form-item">
+							<label class="layui-form-label">型号/序列号</label>
+							<div class="layui-input-block">
+								<input type="text" name="intCode" autocomplete="off" placeholder="请输入型号/序列号" class="layui-input">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">检定时间</label>
+							<div class="layui-input-block">
+								<input type="text" name="intTime" lay-verify="regDeta" autocomplete="off" placeholder="请选择检定时间" class="layui-input time-item">
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">安装位置</label>
+							<div class="layui-input-block">
+								<input type="text" name="intInstallAddress" autocomplete="off" placeholder="请输入安装位置" class="layui-input">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item form-btn">
+					<button class="layui-btn cancel" onclick="collFn()">取消</button>
+					<button type="submit" class="layui-btn subbtn" lay-submit lay-filter="addBtn">提交/审核</button>
+				</div>
+			</div>
+
+		</form>
+
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				getFn: "lib/getFn",
+				plusAdd: "js/plusAdd",
+			})
+			.use("plusAdd");
+	</script>
+</html>

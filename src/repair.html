@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>志愿船维护管理-设备维护维修记录</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/repair.css">
+	</head>
+	<body>
+		<div class="layui-form title">
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">船舶</label>
+					<div class="layui-input-block xm-select">
+						<div id="xmselect"></div>
+					</div>
+				</div>
+		
+				<div class="layui-inline">
+					<select name="isPass">
+						<option value="3">全部</option>
+						<option value="0">待审核</option>
+						<option value="1">审核通过</option>
+						<option value="2">审核拒绝</option>
+					</select>
+				</div>
+		
+				<div class="layui-inline">
+					<button class="layui-btn subbtn" lay-submit lay-filter="queryBtn">查询</button>
+					<button class="layui-btn addbtn" lay-submit lay-filter="addBtn" name="isBtn">新增</button>
+				</div>
+			</div>
+		</div>
+
+		<table class="layui-hide" id="table" lay-filter="table"></table>
+		
+		<!-- 全部权限的显示 -->
+		<script type="text/html" id="toolbar">
+			<a class="btn" lay-event="4">
+				<img src="../static/src8.png">
+				<span>详细信息</span>
+			</a>
+			{{#if(d.isPass ==0){}}
+			<a class="btn" lay-event="1">
+				<img src="../static/src8.png">
+				<span>通过</span>
+			</a>
+			<a class="btn" lay-event="2">
+				 <img src="../static/src9.png">
+				 <span>拒绝</span>
+			</a>
+			
+			{{#} if(d.isPass ==1){}}
+			<a class="btn" lay-event="5">
+				<img src="../static/src11.png">
+				修改
+			</a>
+			<a class="btn" lay-event="3">
+				<img src="../static/src10.png">
+				<span>删除</span>
+			</a>
+			<a class="btn" lay-event="6">
+				<img src="../static/zyc3.png">
+				<span>导出</span>
+			</a>
+			{{#} if(d.isPass ==2){}}
+			<a class="btn" lay-event="3">
+				<img src="../static/src10.png">
+				<span>删除</span>
+			</a>
+			{{#}}}
+		</script>
+		<!-- 只有查看权限的显示 -->
+		<script type="text/html" id="toolbars">
+			<a class="btn" lay-event="4">
+				<img src="../static/src8.png">
+				详细信息
+			</a>
+		</script>
+
+
+
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script src="../assets/lib/xmselect.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				thead: "modul/thead",
+				repair: "js/repair",
+			})
+			.use("repair");
+	</script>
+</html>

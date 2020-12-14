@@ -1,0 +1,68 @@
+<script>
+	var token = sessionStorage.token;
+	if (!token) {
+	    alert("请先登录!")
+	    window.top.location.href = "../index.html";
+	}
+</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title></title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/shipLine.css">
+	</head>
+
+
+	<body>
+
+		<form class="layui-form ship-form">
+			<div class="layui-form-item">
+				<label class="layui-form-label">操作</label>
+				<div class="layui-input-block">
+					<input type="checkbox" lay-skin="primary" title="全选" lay-filter="c_all">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">船舶</label>
+				<div class="layui-input-block check">
+					<div class="check-box" id="check">
+						<p>
+								<input type="checkbox" lay-skin="primary" value="1" title="全选" class="checkbox">
+							</p>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">时间范围</label>
+				<div class="layui-input-block">
+					<input type="text" name="date" id="shipTime" autocomplete="off" placeholder="请选择时间范围" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item btn">
+				<button type="submit" class="layui-btn" lay-submit lay-filter="subbtn">查询</button>
+			</div>
+		</form>
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				shipLine: "js/shipLine",
+			})
+			.use("shipLine");
+	</script>
+</html>

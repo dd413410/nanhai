@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title>观测数据管理-导出-船舶列表</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/boatList.css">
+	</head>
+
+	<body>
+
+		<div class="layui-form reg-form">
+			<div class="layui-form-item reg-check">
+				<input type="checkbox" lay-skin="primary" title="全选" lay-filter="c_all">
+				<button class="layui-btn layui-btn-xs" id="back">确定</button>
+			</div>
+
+			<div class="layui-form-item check">
+				<div class="check-box" id="check">
+					<!-- <p><input type="checkbox" lay-skin="primary" title="全选" class="checkbox"></p> -->
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				boatList: "js/boatList",
+			})
+			.use("boatList");
+	</script>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title>观测数据管理-导出-船舶列表</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/boatList.css">
+	</head>
+
+	<body>
+		<div class="reg-title">
+			<i class="layui-icon layui-icon-prev" id="back"></i>
+			选择船舶
+		</div>
+		
+		<div class="layui-form reg-form">
+			<div class="layui-form-item reg-check">
+				<input type="checkbox" lay-skin="primary" title="全选" lay-filter="c_all">
+			</div>
+
+			<div class="layui-form-item check">
+				<div class="check-box" id="check">
+					<p><input type="checkbox" lay-skin="primary" title="全选" class="checkbox"></p>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				boatList: "js/boatList",
+			})
+			.use("boatList");
+	</script>
+
+</html>
+ -->

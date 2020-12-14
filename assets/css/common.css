@@ -1,0 +1,89 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* a:hover { 
+    text-decoration:underline; 
+} */
+button,
+input,
+select,
+textarea {
+	font-size: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 经常用到的样式 */
+.lt {
+	float: left;
+}
+
+.rt {
+	float: right;
+}
+
+.subbtn {
+	background-color: #00346F;
+}
+
+input[type=text]::-webkit-input-placeholder,
+input[type=password]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+	font-size: 14px !important;
+}
+
+input[type=text]:-moz-placeholder,
+input[type=password]:-moz-placeholder,
+textarea::-webkit-input-placeholder {
+	font-size: 14px !important;
+}
+
+input[type=text]::-moz-placeholder,
+input[type=password]::-moz-placeholder,
+textarea::-webkit-input-placeholder {
+	font-size: 14px !important;
+}
+
+input[type=text]:-ms-input-placeholder,
+input[type=password]:-ms-input-placeholder,
+textarea::-webkit-input-placeholder {
+	font-size: 14px !important;
+}
+
+/* ///////////// */
+
+/* 地图样式去除 */
+/* 百度地图 */
+.anchorBL {
+	display: none;
+}
+
+
+
+/* 后台添加按钮,初始为隐藏,根据权限显示 */
+[name="isBtn"] {
+	display: none;
+}

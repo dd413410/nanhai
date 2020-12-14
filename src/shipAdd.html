@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>志愿船信息管理-添加志愿船</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/shipAdd.css">
+	</head>
+	<body>
+		<form class="layui-form" lay-filter="shipForm">
+			<input type="hidden" name="id">
+			<div class="layui-form-item">
+				<label class="layui-form-label">船舶名称</label>
+				<div class="layui-input-block">
+					<input type="text" name="boatName" lay-verify="boatName" autocomplete="off" placeholder="请输入船舶名称" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">船舶呼号</label>
+				<div class="layui-input-block">
+					<input type="text" name="boatId" lay-verify="boatId" autocomplete="off" placeholder="请输入船舶呼号" class="layui-input">
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">船舶联系人</label>
+				<div class="layui-input-block">
+					<input type="text" name="boatContact" lay-verify="boatContact" autocomplete="off" placeholder="多个联系人以,分开" class="layui-input">
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">联系人电话</label>
+				<div class="layui-input-block">
+					<input type="text" name="boatMobile" lay-verify="boatMobile" autocomplete="off" placeholder="多个联系方式以,分开" class="layui-input">
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">所属单位</label>
+				<div class="layui-input-block">
+					<input type="text" name="ofUnit" lay-verify="ofUnit" autocomplete="off" placeholder="请输入船舶所属单位" class="layui-input">
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">单位联系人</label>
+				<div class="layui-input-block">
+					<input type="text" name="unitName" lay-verify="unitName" autocomplete="off" placeholder="多个联系人以,分开" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">单位联系电话</label>
+				<div class="layui-input-block">
+					<input type="text" name="companyMobile" lay-verify="companyMobile" autocomplete="off" placeholder="多个联系方式以,分开"
+					 class="layui-input">
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">数据发送频次</label>
+				<div class="layui-input-block">
+					<input type="text" name="frequency" lay-verify="frequency" autocomplete="off" placeholder="请输入数据发送频次" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">船舶吨位</label>
+				<div class="layui-input-block">
+					<input type="text" name="tonnage" lay-verify="tonnage" autocomplete="off" placeholder="请输入船舶吨位" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">正常吃水深度</label>
+				<div class="layui-input-block">
+					<input type="text" name="boatNormalDepth" lay-verify="boatNormalDepth" autocomplete="off" placeholder="请输入正常吃水深度(m)"
+					 class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">满载吃水深度</label>
+				<div class="layui-input-block">
+					<input type="text" name="boatFullDepth" lay-verify="boatFullDepth" autocomplete="off" placeholder="请输入满载吃水深度(m)"
+					 class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">船舶用途描述</label>
+				<div class="layui-input-block">
+					<textarea name="boatDesc" placeholder="请输入船舶用途描述" class="layui-textarea"></textarea>
+				</div>
+			</div>
+
+			<div class="layui-form-item btn">
+				<button type="submit" class="layui-btn cancel" onclick="collFn()">取消</button>
+				<button type="submit" id="subbtn" class="layui-btn subbtn" lay-submit lay-filter="addBtn">新增</button>
+			</div>
+		</form>
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				getFn: "lib/getFn",
+				shipAdd: "js/shipAdd",
+			})
+			.use("shipAdd");
+	</script>
+</html>

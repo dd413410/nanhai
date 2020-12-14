@@ -1,0 +1,220 @@
+<script>
+	var token = sessionStorage.token;
+	if (!token) {
+	    alert("请先登录!")
+	    window.top.location.href = "../index.html";
+	}
+</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title>远洋商船搭载调查信息数据综合显示系统</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/home.css">
+	</head>
+
+	<body>
+		<div class="map" id="map">
+			<!-- <iframe id="iframe" src="./map1.html" frameborder="0"></iframe> -->
+		</div>
+
+		<div class="head">
+			<!-- <span class="head-text">
+				远洋商船搭载调查信息数据综合显示系统
+			</span> -->
+		</div>
+		<div class="head-btn">
+			<div>
+				<p onclick="locaFn('13')">综合监控</p>
+				<p onclick="locaFn('12')">运行监控</p>
+				<p onclick="locaFn('2')">后台</p>
+			</div>
+			<div class="rt-out" onclick="outFn()">
+				退出
+			</div>
+		</div>
+
+		<div class="layui-form form-sear">
+			<div class="sear-box">
+				<div class="layui-input-inline" id="selectInput"></div>
+				<div class="layui-input-inline">
+					<button class="layui-btn sear-btn" lay-submit lay-filter="sear">
+						<img src="../static/map4.png">
+					</button>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="icon-top">
+			<p id="sateBtn">
+				<img src="../static/map5.png" alt="">
+				<span>卫星</span>
+			</p>
+			<p map="btnMap" type="1">
+				<img src="../static/map7.png" alt="">
+				<span>台风</span>
+			</p>
+			<p map="btnMap" type="2">
+				<img src="../static/map6.png" alt="">
+				<span>表漂</span>
+			</p>
+
+			<p id="buoyLineBtn" type="3">
+				<img src="../static/map91.png" alt="">
+				<span>表漂轨迹</span>
+			</p>
+			<p id="shipLineBtn" type="4">
+				<img src="../static/map9.png" alt="">
+				<span>船舶轨迹</span>
+			</p>
+			<p id="alert">
+				<img src="../static/map8.png" alt="">
+				<span>预警报信息</span>
+			</p>
+		</div>
+
+		<div class="icon-btm">
+			<div class="btm-div" id="dele">
+				<img src="../static/qingchu.png" alt="">
+				<span>清除</span>
+			</div>
+
+			<div class="btm-div" map="btnMap" type="6">
+				<img src="../static/map10.png" alt="">
+				<span>测距</span>
+			</div>
+			<div class="btm-div btm-type">
+				地图模式
+				<div class="layui-form layui-input-inline">
+					<select lay-filter="type">
+						<option value="1">天地图</option>
+						<option value="2">百度地图</option>
+						<option value="3">高德地图</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="icon-type" id="iconType">
+			<div class="type-div add" is="1">
+				<img src="../static/icon2.png" alt="">
+				<p>地图</p>
+			</div>
+			<div class="type-div" is="2">
+				<img src="../static/icon1.png" alt="">
+				<p>影像图</p>
+			</div>
+		</div>
+
+
+		<div class="btm-icon">
+			<p class="layui-icon layui-icon-next" id="stretch" is="1"></p>
+			<div class="icon-box">
+				<p>
+					<img src="../static/map11.png" alt="">
+					<span>超强台风</span>
+				</p>
+				<p>
+					<img src="../static/map12.png" alt="">
+					<span>强台风</span>
+				</p>
+				<p>
+					<img src="../static/map13.png" alt="">
+					<span>中级台风</span>
+				</p>
+				<p>
+					<img src="../static/map14.png" alt="">
+					<span>台风</span>
+				</p>
+			</div>
+		</div>
+
+
+
+		<!-- 单条轨迹选择 -->
+		<div class="track" id="trackBox">
+			<div class="layui-form">
+				<div class="layui-form-item">
+					<label class="layui-form-label">时间范围</label>
+					<div class="layui-input-block">
+						<input type="text" name="time" lay-verify="time" autocomplete="off" placeholder="请选择时间范围" class="layui-input timeItem">
+					</div>
+				</div>
+
+				<div class="layui-form-item btn">
+					<button class="layui-btn subbtn" lay-submit lay-filter="trackBtn">确认</button>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<!-- 表漂轨迹多个 -->
+		<div class="layui-form ship-line" id="buoyLine">
+			<div class="layui-form-item">
+				<label class="layui-form-label">表漂</label>
+				<div class="layui-input-block">
+					<div id="xmselects"></div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">时间范围</label>
+				<div class="layui-input-block">
+					<input type="text" name="time" lay-verify="time" autocomplete="off" placeholder="请选择时间范围" class="layui-input timeItem">
+				</div>
+			</div>
+
+			<div class="layui-form-item btn">
+				<button class="layui-btn" lay-submit lay-filter="buoyBtn">查询</button>
+			</div>
+		</div>
+
+
+
+		<!-- 船舶轨迹多个 -->
+		<div class="layui-form ship-line" id="shipLine">
+			<div class="layui-form-item">
+				<label class="layui-form-label">船舶</label>
+				<div class="layui-input-block">
+					<div id="xmselect"></div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">时间范围</label>
+				<div class="layui-input-block">
+					<input type="text" name="time" lay-verify="time" autocomplete="off" placeholder="请选择时间范围" class="layui-input timeItem">
+				</div>
+			</div>
+
+			<div class="layui-form-item btn">
+				<button class="layui-btn" lay-submit lay-filter="shipBtn">查询</button>
+			</div>
+		</div>
+
+
+
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script src="../assets/lib/xmselect.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				selectInput: 'lib/selectInput/selectInput',
+				home: "js/home",
+			})
+			.use("home");
+	</script>
+
+</html>

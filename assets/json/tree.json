@@ -1,0 +1,175 @@
+{
+	"data":[
+		{
+			"id": "1",
+			"title": "展示界面",
+			"parentId": "0",
+			"checkArr": [{
+				"type": "0",
+				"checked": "0"
+			}],
+			"children": [{
+					"id": "11",
+					"title": "显示系统",
+					"parentId": "1",
+					"checkArr": [{
+						"type": "0",
+						"checked": "0"
+					}],
+					"children": []
+				},
+				{
+					"id": "12",
+					"title": "运行监控",
+					"parentId": "2",
+					"checkArr": [{
+						"type": "0",
+						"checked": "0"
+					}],
+					"children": []
+				},
+				{
+					"id": "13",
+					"title": "综合监控",
+					"parentId": "1",
+					"checkArr": [{
+						"type": "0",
+						"checked": "0"
+					}],
+					"children": []
+				}
+				
+			]
+		},{
+		"id": "2",
+		"title": "后台管理",
+		"parentId": "0",
+		"checkArr": [{
+			"type": "0",
+			"checked": "0"
+		}],
+		"children": [{
+				"id": "21",
+				"title": "权限管理",
+				"parentId": "1",
+				"checkArr": [{
+					"type": "0",
+					"checked": "0"
+				}],
+				"children": [{
+					"id": "211",
+					"title": "用户信息",
+					"parentId": "2",
+					"checkArr": [{
+						"type": "0",
+						"checked": "0"
+					}],
+					"children": []
+				}]
+			},
+			{
+				"id": "22",
+				"title": "志愿船信息管理",
+				"parentId": "1",
+				"checkArr": [{
+					"type": "0",
+					"checked": "0"
+				}],
+				"children": [
+					{
+						"id": "221",
+						"title": "船舶信息管理",
+						"parentId": "3",
+						"checkArr": [{
+							"type": "0",
+							"checked": "0"
+						}],
+						"children": []
+					}
+				]
+			},
+			{
+				"id": "23",
+				"title": "志愿船维护管理",
+				"parentId": "1",
+				"checkArr": [{
+					"type": "0",
+					"checked": "0"
+				}],
+				"children": [
+					{
+						"id": "231",
+						"title": "设备加装记录查询",
+						"parentId": "4",
+						"checkArr": [{
+							"type": "0",
+							"checked": "0"
+						}],
+						"children": []
+					},
+					{
+						"id": "232",
+						"title": "设备维护维修记录",
+						"parentId": "4",
+						"checkArr": [{
+							"type": "0",
+							"checked": "0"
+						}],
+						"children": []
+					}
+				]
+			},
+			{
+				"id": "24",
+				"title": "统计分析",
+				"parentId": "1",
+				"checkArr": [{
+					"type": "0",
+					"checked": "0"
+				}],
+				"children": [
+					{
+						"id": "241",
+						"title": "数据统计分析",
+						"parentId": "5",
+						"checkArr": [{
+							"type": "0",
+							"checked": "0"
+						}],
+						"children": []
+					}
+				]
+			},
+			{
+				"id": "25",
+				"title": "仪器设备管理",
+				"parentId": "1",
+				"checkArr": [{
+					"type": "0",
+					"checked": "0"
+				}],
+				"children": []
+			},
+			{
+				"id": "26",
+				"title": "观测数据管理",
+				"parentId": "1",
+				"checkArr": [{
+					"type": "0",
+					"checked": "0"
+				}],
+				"children": []
+			},
+			{
+				"id": "27",
+				"title": "日志管理",
+				"parentId": "1",
+				"checkArr": [{
+					"type": "0",
+					"checked": "0"
+				}],
+				"children": []
+			}
+		]
+	}]
+}

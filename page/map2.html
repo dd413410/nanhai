@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title></title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/map.css">
+	</head>
+	<body>
+		<div id="map"></div>
+		<div class="lnglat" id="lnglat"></div>
+	</body>
+	<script src="https://api.map.baidu.com/api?v=3.0&ak=xYVgj6tbqCzrmbAGc3dwlnUOpFKdoVVs"></script>
+	<script src="../assets/lib/distanceTool.js"></script>
+	<!-- <script src="https://api.map.baidu.com/api?type=webgl&v=3.0&ak=xYVgj6tbqCzrmbAGc3dwlnUOpFKdoVVs"></script> -->
+	<!-- <script src="../assets/lib/DistanceTool.js"></script> -->
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				map2: "js/map2",
+			})
+			.use("map2");
+	</script>
+
+</html>

@@ -1,0 +1,105 @@
+body {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	padding-right: 620px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.lt-box {
+	width: 100%;
+	height: 100vh;
+}
+
+.lt-box img {
+	width: 100%;
+	height: 100%;
+}
+
+.login {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 620px;
+	height: 100%;
+	padding: 0 100px;
+	padding-top: 160px;
+	box-sizing: border-box;
+}
+
+.login .layui-form {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.login-title {
+	line-height: 50px;
+	color: #00315c;
+	font-size: 36px;
+	font-family: PingFangSC-Semibold, PingFang SC;
+	font-weight: 600;
+	margin-bottom: 125px;
+}
+
+.title {
+	font-size: 16px;
+	font-family: PingFangSC-Medium, PingFang SC;
+	font-weight: 500;
+	color: #00346f;
+	line-height: 22px;
+	margin-bottom: 10px;
+}
+
+.login-ipt {
+	width: 100%;
+	height: 50px;
+	margin-bottom: 20px;
+	padding-right: 36px;
+	box-sizing: border-box;
+	background: #E7F6FF;
+	position: relative;
+}
+
+.login-ipt input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	background: #E7F6FF;
+}
+
+.login-ipt img {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 10px;
+	top: 17px;
+}
+
+.layui-form-item .subbtn {
+	width: 100%;
+	margin-top: 80px;
+}
+
+.login-reg {
+	text-align: center;
+	color: #00346F;
+	font-size: 18px;
+	font-family: PingFangSC-Semibold, PingFang SC;
+	margin-top: 100px;
+	cursor: default;
+}
+
+.login-sup {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	line-height: 17px;
+	text-align: center;
+	color: #5C7898;
+	font-size: 12px;
+}
+.lay-reg {
+	border-radius: 4px 60px 4px 60px !important;
+}

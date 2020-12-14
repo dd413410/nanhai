@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title>用户管理-权限分配</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/lib/dtree/dtree.css">
+		<link rel="stylesheet" href="../assets/lib/dtree/font/dtreefont.css">
+		<link rel="stylesheet" href="../assets/css/common.css">
+		<link rel="stylesheet" href="../assets/css/userRole.css">
+	</head>
+
+	<body>
+		
+		<div class="layui-form" lay-filter="userForm">
+			<div class="layui-form-item">
+				<label class="layui-form-label">角色名称</label>
+				<div class="layui-input-block">
+					<input type="text" name="userName" autocomplete="off" disabled class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">模块权限</label>
+				
+				<div class="layui-input-block tree">
+					<div id="tree">
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+			    <label class="layui-form-label">使用权限</label>
+			    <div class="layui-input-block">
+			      <input type="radio" name="usePermission" value="1" title="全部" checked>
+			      <input type="radio" name="usePermission" value="0" title="仅查询">
+			    </div>
+			  </div>
+			
+			<div class="layui-form-item btn">
+				<button type="submit" class="layui-btn cancel" onclick="collFn()">取消</button>
+				<button type="submit" class="layui-btn subbtn" lay-submit lay-filter="addBtn">确认</button>
+			</div>
+		</div>
+
+	</body>
+	<script src="../assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/"
+			})
+			.extend({
+				http: "api/http",
+				getFn: "lib/getFn",
+				dtree:"lib/dtree/dtree",
+				userRole: "js/userRole",
+			})
+			.use("userRole");
+	</script>
+
+</html>

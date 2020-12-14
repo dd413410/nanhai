@@ -1,0 +1,47 @@
+.reg-box{
+  width: 920px;
+  /* height: 800px; */
+  height: 760px;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.reg-title{
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: 400;
+  color: #0031C2;
+}
+.reg-title img{
+	width: 32px;
+	height: 32px;
+}
+.reg-form{
+  padding: 0 150px;
+  box-sizing: border-box;
+  margin-top: 30px;
+  
+}
+.layui-form-item{
+  height: 50px;
+  margin-bottom: 8px;
+  padding-top: 6px;
+  box-sizing: border-box;
+}
+.layui-form-item .layui-form-label{
+  width: 120px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #191919;
+}
+.layui-form-item .layui-input-block{
+  margin-left: 150px;
+}
+.layui-textarea{
+  resize:none; 
+}
+.layui-form-item .subbtn{
+  width: 100%;
+  margin-top: 80px;
+}

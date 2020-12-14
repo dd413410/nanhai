@@ -1,0 +1,158 @@
+<script>
+	var token = sessionStorage.token;
+	if (!token) {
+	    alert("请先登录!")
+	    window.top.location.href = "../index.html";
+	}
+</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>远洋商船搭载调查信息数据综合管理系统</title>
+		<link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/src.css">
+	</head>
+	<body class="layui-layout-body">
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-header">
+				<div class="layui-logo">后台管理系统</div>
+				<div class="layui-title">
+					<p onclick="locaFn('13')">综合监控</p>
+					<p onclick="locaFn('12')">运行监控</p>
+					<p onclick="locaFn('11')">显示系统</p>
+					<span onclick="outFn()">退出</span>
+				</div>
+			</div>
+
+			<div class="layui-side layui-side-menu">
+				<div class="layui-side-scroll">
+					<ul class="layui-nav layui-nav-tree" id="side-menu">
+						
+						<li class="layui-nav-item layui-nav-itemed">
+							<a>
+								<img src="../static/src2.png">
+								<cite>权限管理</cite>
+							</a>
+							<dl class="layui-nav-child">
+								<dd class="layui-this">
+									<a name="laynav" lay-url="211">
+										<cite>用户信息</cite>
+									</a>
+								</dd>
+							</dl>
+						</li>
+						
+						<li class="layui-nav-item">
+							<a>
+								<img src="../static/src4.png">
+								<cite>志愿船信息管理</cite>
+							</a>
+
+							<dl class="layui-nav-child">
+								<dd>
+									<a name="laynav" lay-url="221">
+										<cite>船舶信息管理</cite>
+									</a>
+								</dd>
+								
+								<!-- <dd>
+									<a name="laynav" lay-url="221">
+										<cite>基本信息管理</cite>
+									</a>
+								</dd>
+								<dd>
+									<a name="laynav" lay-url="223">
+										<cite>船舶信息管理</cite>
+									</a>
+								</dd> -->
+							</dl>
+						</li>
+						
+						
+						<li class="layui-nav-item">
+							<a>
+								<img src="../static/src5.png">
+								<cite>志愿船维护管理</cite>
+							</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a name="laynav" lay-url="231">
+										<!-- <cite>设备加装记录整体查询</cite> -->
+										<cite>设备加装记录查询</cite>
+									</a>
+								</dd>
+								<dd>
+									<a name="laynav" lay-url="232">
+										<cite>设备维护维修记录</cite>
+									</a>
+								</dd>
+							</dl>
+						</li>
+						
+						<li class="layui-nav-item">
+							<a>
+								<img src="../static/src71.png">
+								<cite>统计分析</cite>
+							</a>
+
+							<dl class="layui-nav-child">
+								<dd>
+									<a name="laynav" lay-url="241">
+										<cite>数据统计分析</cite>
+									</a>
+								</dd>
+							</dl>
+						</li>
+						
+						<li class="layui-nav-item">
+							<a name="laynav" lay-url="25">
+								<img src="../static/src3.png">
+								<cite>仪器设备管理</cite>
+							</a>
+						</li>
+						
+						<li class="layui-nav-item">
+							<a name="laynav" lay-url="26">
+								<img src="../static/src6.png">
+								<cite>观测数据管理</cite>
+							</a>
+						</li>
+						
+						<li class="layui-nav-item">
+							<a name="laynav" lay-url="27">
+								<img src="../static/src7.png">
+								<cite>日志管理</cite>
+							</a>
+						</li>
+						<li class="layui-nav-item">
+							<a name="laynav" lay-url="28">
+								<img src="../static/src7.png">
+								<cite>登录信息</cite>
+							</a>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+			<div class="layui-body" id="iframe">
+				<!-- <iframe class="iframe" src="user.html" frameborder="0"></iframe> -->
+				<!-- <iframe class="iframe" src="test.html" frameborder="0"></iframe> -->
+			</div>
+		</div>
+		<script src="../assets/lib/layui/layui.js"></script>
+		<script>
+			layui
+				.config({
+					base: "../assets/"
+				})
+				.extend({
+					http: "api/http",
+					getFn: "lib/getFn",
+					src: "js/src",
+				})
+				.use("src");
+		</script>
+	</body>
+</html>

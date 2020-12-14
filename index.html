@@ -1,0 +1,76 @@
+<script>
+	sessionStorage.clear();
+</script>
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<title>远洋商船搭载调查信息数据综合管理系统</title>
+		<link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="./assets/css/common.css">
+		<link rel="stylesheet" href="./assets/css/index.css">
+	</head>
+
+	<body>
+		<div class="lt-box">
+			<img src="./static/login.png" alt="">
+		</div>
+		<div class="login">
+			<div class="layui-form">
+				<div class="layui-form-item login-title">
+					远洋商船搭载调查信息数据综合管理系统
+				</div>
+
+				<div class="layui-form-item title">
+					用户名
+				</div>
+				<div class="layui-form-item login-ipt">
+					<input type="text" name="userName" id="userName" lay-verify="required" lay-reqtext="用户名不能为空" placeholder="请输入用户名"
+					 autocomplete="off" autofocus class="layui-input">
+					<img src="./static/login2.png" is="1" id="userImg">
+				</div>
+
+				<div class="layui-form-item title">
+					密码
+				</div>
+				<div class="layui-form-item login-ipt">
+					<input type="password" name="passWord" id="passWord" lay-verify="required" lay-reqtext="密码不能为空" placeholder="请输入密码"
+					 autocomplete="off" class="layui-input">
+					<img src="./static/login4.png" is="1" id="wordImg">
+				</div>
+
+				<div class="layui-form-item">
+					<button type="submit" class="layui-btn subbtn" lay-submit lay-filter="login">登录</button>
+				</div>
+
+				<div class="layui-form-item login-reg" id="loginReg">
+					注册
+				</div>
+
+				<div class="layui-form-item login-sup">
+					<p>技术支持：国家海洋南海预报中心 中国广州新港中路353号</p>
+					<p>电话：020-84451329 传真：020-84197349</p>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script src="./assets/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "./assets/"
+			})
+			.extend({
+				http: "api/http",
+				getFn: "lib/getFn",
+				index: "js/index",
+			})
+			.use("index");
+	</script>
+
+</html>
